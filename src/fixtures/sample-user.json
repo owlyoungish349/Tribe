@@ -1,29 +1,32 @@
 {
-  "id": "sample-001",
-  "displayName": "Alex",
+  "id": "user-al",
+  "displayName": "Al",
   "source": "chatgpt_memories",
   "confirmed": true,
   "interests": [
-    { "name": "lo-fi music production", "weight": 0.9 },
-    { "name": "indie game development", "weight": 0.8 },
-    { "name": "generative art / creative coding", "weight": 0.85 },
-    { "name": "urban photography", "weight": 0.6 },
-    { "name": "rust programming language", "weight": 0.7 }
+    { "name": "dark, morally complex anime", "weight": 0.9 },
+    { "name": "grand strategy rpgs", "weight": 0.8 },
+    { "name": "geopolitics — iran focus", "weight": 0.8 },
+    { "name": "civic navigation tools", "weight": 0.85 },
+    { "name": "cloud and platform engineering", "weight": 0.7 },
+    { "name": "war thunder — ussr tree", "weight": 0.6 },
+    { "name": "guitar", "weight": 0.5 }
   ],
   "values": [
-    { "name": "build in public", "weight": 0.9 },
-    { "name": "craft over speed", "weight": 0.8 },
-    { "name": "async-first collaboration", "weight": 0.75 },
-    { "name": "open source ethos", "weight": 0.85 }
+    { "name": "usefulness over prestige", "weight": 0.95 },
+    { "name": "helping disoriented people navigate systems", "weight": 0.9 },
+    { "name": "fairness and noticing its absence", "weight": 0.85 },
+    { "name": "substance over status", "weight": 0.85 },
+    { "name": "privacy-first tooling", "weight": 0.8 }
   ],
-  "comm_style": "thoughtful and asynchronous — prefers written threads over calls, shares work-in-progress openly, values depth over small talk",
-  "current_focus": "finishing a lo-fi beat pack and shipping a small browser-based generative art tool before the end of Q1",
-  "vibe_summary": "a quiet builder who makes things at the intersection of code and art — most alive when deep in a project, happiest in small groups of fellow makers",
+  "comm_style": "composed and reflective under pressure; detail-oriented and organised; strong bias toward action and initiative; connects over substance rather than surface; course-corrects calmly rather than getting defensive",
+  "current_focus": "infrastructure consolidation at Lloyds Banking Group; building a civic-navigation agent at a hackathon; progressing toward Professional Cloud Architect certification",
+  "vibe_summary": "someone who builds practical tools for real people facing bureaucratic walls — drawn to moral complexity in fiction and geopolitics, calm and deliberate in how they operate, motivated by meaning and craft rather than status, with a consistent thread of helping disoriented people find their footing in unfamiliar systems",
   "confidence": {
-    "interests": 0.9,
-    "values": 0.85,
-    "comm_style": 0.8,
-    "current_focus": 0.95,
-    "vibe_summary": 0.85
+    "interests": 0.95,
+    "values": 0.9,
+    "comm_style": 0.85,
+    "current_focus": 0.92,
+    "vibe_summary": 0.88
   }
 }

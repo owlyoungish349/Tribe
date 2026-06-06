@@ -2,52 +2,52 @@
   "peopleTop3": [
     {
       "id": "person-01",
-      "score": 91,
-      "reason": "Mia ships in public and craves blunt feedback — same rhythm as you, minus the networking theater."
+      "score": 94,
+      "reason": "Roya is building a multilingual NHS form assistant because she watched her family get chewed up by health admin — that's your exact civic navigation thread, plus she's rewatching Berserk and grinding GCP certs. Almost identical operating mode."
     },
     {
-      "id": "person-03",
+      "id": "person-02",
       "score": 88,
-      "reason": "Sam's 'if it compiles it ships' hackathon energy matches your fast-iteration focus at VibeHack."
+      "reason": "Marcus writes MENA geopolitics threads and is building a UK benefit calculator for Ghanaian diaspora — same 'systems that confuse people should be fixed' instinct, with 4000 hours in EU4 to boot."
     },
     {
-      "id": "person-07",
-      "score": 84,
-      "reason": "Kai runs weekly design roasts — honest feedback is literally both of your top interests."
+      "id": "person-10",
+      "score": 85,
+      "reason": "Amara is building digital guides for asylum seekers at UK border control — the civic navigation angle is her whole identity, not a side project. Values alignment is about as close as it gets."
     }
   ],
   "communitiesTop3": [
     {
-      "id": "comm-rough-draft",
-      "score": 89,
-      "reason": "Weekly ugly-demo roasts with zero vanity metrics — this room was built for builders like you."
+      "id": "community-01",
+      "score": 91,
+      "reason": "Dark Narratives is exactly the room you'd pick — dense analytical threads connecting Berserk's power dynamics to geopolitics, HOI4 scenario modelling, and Iranian state collapse. No hot takes tolerated."
     },
     {
-      "id": "comm-feedback-loop",
-      "score": 82,
-      "reason": "Structured critique with one compliment max — direct feedback without the chaos you sometimes want."
+      "id": "community-03",
+      "score": 87,
+      "reason": "Cloud Craft runs the exact Anthos debate and Lloyds-style infra consolidation threads you'd contribute to — craft-focused, privacy-first, no vendor worship."
     },
     {
-      "id": "comm-night-shift",
-      "score": 71,
-      "reason": "Solid overlap on fast iteration, but the solo night-owl vibe is quieter than your roast-session energy."
+      "id": "community-02",
+      "score": 79,
+      "reason": "Rough Draft Builders overlaps on the bias-toward-action front — ugliest MVP wins, demo nights, builders who ship before they polish."
     }
   ],
   "expansionTop3": [
     {
-      "id": "person-18",
-      "score": 78,
-      "reason": "Casey prototypes futures through design fiction — a natural fit for a speculative design lab."
+      "id": "person-03",
+      "score": 82,
+      "reason": "Priya is building a visa renewal tool for international students and works as a cloud architect — she's adjacent to your civic navigation work and would be a natural early member of a group forming around this."
     },
     {
-      "id": "person-02",
-      "score": 74,
-      "reason": "Jordan connects builders across communities — useful glue for a space that's just forming."
+      "id": "person-06",
+      "score": 79,
+      "reason": "Kofi's housing benefit guide project and platform engineering background make him a strong fit — he's already doing the work, just in a different community context."
     },
     {
-      "id": "person-15",
-      "score": 68,
-      "reason": "Diego bridges time zones and ships community infra — complementary, not core to the niche."
+      "id": "person-05",
+      "score": 75,
+      "reason": "Laila brings the diaspora and fairness angle from a non-technical perspective — her Substack readership would give a civic navigation group reach into the people who actually need the tools."
     }
   ]
 }
