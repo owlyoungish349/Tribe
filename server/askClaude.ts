@@ -1,13 +1,16 @@
-import { Agent } from '@cursor/sdk';
-
 // SINGLE swap point for the whole app.
-// Use Cursor.models.list({ apiKey: process.env.CURSOR_API_KEY }) to discover
-// available model IDs for your account. "claude-sonnet-4-6" is attempted first;
-// fall back to "composer-2" if your account doesn't expose Anthropic models.
-export const MODEL = 'claude-sonnet-4-6';
+export const MODEL = 'gemini-2.0-flash';
+
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
+
+type GeminiResponse = {
+  candidates?: Array<{
+    content?: { parts?: Array<{ text?: string }> };
+  }>;
+  error?: { message: string };
+};
 
 function stripFences(text: string): string {
-  // Coding agents sometimes wrap JSON output in ``` fences despite instructions.
   return text
     .replace(/^```(?:json)?\s*\n?/i, '')
     .replace(/\n?```\s*$/i, '')
@@ -15,21 +18,25 @@ function stripFences(text: string): string {
 }
 
 export async function askClaude(systemPrompt: string, userContent: string): Promise<string> {
-  // No dedicated system field in the Cursor SDK — prepend with clear delimiters.
-  const message = `[SYSTEM]\n${systemPrompt}\n[/SYSTEM]\n\n${userContent}`;
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) throw new Error('GEMINI_API_KEY is not set');
 
-  // Agent.prompt: stateless convenience wrapper — creates, runs one turn, disposes.
-  // cloud: {} → no local filesystem or codebase context attached.
-  const result = await Agent.prompt(message, {
-    apiKey: process.env.CURSOR_API_KEY,
-    model: { id: MODEL },
-    cloud: {},
+  const res = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      system_instruction: { parts: [{ text: systemPrompt }] },
+      contents: [{ parts: [{ text: userContent }] }],
+      generationConfig: { temperature: 0.4, maxOutputTokens: 1024 },
+    }),
   });
 
-  if (result.status === 'error') {
-    throw new Error(`Cursor agent run failed (status=error, id=${result.id})`);
+  const data = await res.json() as GeminiResponse;
+
+  if (!res.ok || data.error) {
+    throw new Error(`Gemini error ${res.status}: ${data.error?.message ?? res.statusText}`);
   }
 
-  const raw = result.result ?? '';
-  return stripFences(raw);
+  const text = data.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
+  return stripFences(text);
 }
