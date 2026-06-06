@@ -1,0 +1,77 @@
+[
+  {
+    "id": "comm-rough-draft",
+    "name": "Rough Draft Club",
+    "description": "Weekly WIP demos with honest roasts. Ship ugly, get better fast.",
+    "interests": [
+      { "name": "building in public", "weight": 0.95 },
+      { "name": "honest feedback", "weight": 0.92 },
+      { "name": "fast iteration", "weight": 0.9 }
+    ],
+    "vibe": "Chaotic-good energy. We celebrate broken demos and fix them together.",
+    "member_ids": ["person-01", "person-03", "person-07", "person-11"],
+    "messages": [
+      { "author_id": "person-01", "text": "ok who's going first tonight. i have a landing page that's aggressively beige", "ts": "2026-05-28T19:02:00Z" },
+      { "author_id": "person-03", "text": "me. fair warning it's held together with console.log and prayer", "ts": "2026-05-28T19:04:00Z" },
+      { "author_id": "person-07", "text": "that's the spirit. beige is a crime tho mia", "ts": "2026-05-28T19:05:00Z" },
+      { "author_id": "person-11", "text": "streaming my demo in 10 if anyone wants to roast live", "ts": "2026-05-28T19:08:00Z" },
+      { "author_id": "person-01", "text": "the hero copy says 'revolutionary' unironically. i need help", "ts": "2026-05-28T19:12:00Z" },
+      { "author_id": "person-03", "text": "delete the word revolutionary. all of it. start over", "ts": "2026-05-28T19:14:00Z" },
+      { "author_id": "person-07", "text": "agree. also your CTA is the same color as the background. intentional?", "ts": "2026-05-28T19:16:00Z" },
+      { "author_id": "person-01", "text": "...no. fixing now. this is why i come here", "ts": "2026-05-28T19:18:00Z" },
+      { "author_id": "person-11", "text": "chat just said my font looks like a ransom note. they're not wrong", "ts": "2026-05-28T19:22:00Z" },
+      { "author_id": "person-03", "text": "reminder: next week theme is 'worst first version'. prize for most embarrassing bug", "ts": "2026-05-28T19:30:00Z" },
+      { "author_id": "person-07", "text": "i'm bringing redlines. bring tissues", "ts": "2026-05-28T19:32:00Z" }
+    ],
+    "summary": "A weekly roast-and-ship crew obsessed with ugly first versions. Members share broken demos, get blunt design and copy feedback, and compete for the most embarrassing bug. Tone is playful but direct — no one leaves without actionable notes."
+  },
+  {
+    "id": "comm-night-shift",
+    "name": "Night Shift Hackers",
+    "description": "After-midnight builders who commit when the world sleeps.",
+    "interests": [
+      { "name": "night coding", "weight": 0.92 },
+      { "name": "fast iteration", "weight": 0.88 },
+      { "name": "solo building", "weight": 0.8 }
+    ],
+    "vibe": "Quiet until 11pm, then the channel explodes with commits and lo-fi links.",
+    "member_ids": ["person-08", "person-03", "person-11"],
+    "messages": [
+      { "author_id": "person-08", "text": "2:14am. just got auth working. might sleep might not", "ts": "2026-05-29T01:14:00Z" },
+      { "author_id": "person-03", "text": "still up. push it. we'll review at lunch", "ts": "2026-05-29T01:18:00Z" },
+      { "author_id": "person-11", "text": "chat is dead but i'm coding. anyone want a sync at 3?", "ts": "2026-05-29T02:45:00Z" },
+      { "author_id": "person-08", "text": "3 works. sharing screen. warning: variable names are all 'temp'", "ts": "2026-05-29T02:50:00Z" },
+      { "author_id": "person-03", "text": "temp2 is my favorite anti-pattern. see you at 3", "ts": "2026-05-29T02:52:00Z" },
+      { "author_id": "person-08", "text": "shipped the extension. 47 tabs open. no regrets", "ts": "2026-05-29T04:30:00Z" },
+      { "author_id": "person-11", "text": "VOD is up if you missed the 3am chaos", "ts": "2026-05-29T10:00:00Z" },
+      { "author_id": "person-03", "text": "tonight: theme is 'one feature in one sitting'. no yak shaving", "ts": "2026-05-29T18:00:00Z" },
+      { "author_id": "person-08", "text": "lo-fi playlist dropped in pins. see you after dark", "ts": "2026-05-29T20:15:00Z" }
+    ],
+    "summary": "Late-night solo builders who sync after midnight for quick reviews and accountability. The vibe is low-key during the day, then bursts into commits, screen shares, and lo-fi playlists. Perfect for people who ship best when everyone else is asleep."
+  },
+  {
+    "id": "comm-feedback-loop",
+    "name": "Feedback Loop SF",
+    "description": "Structured peer critique for builders who want clarity, not compliments.",
+    "interests": [
+      { "name": "honest feedback", "weight": 0.95 },
+      { "name": "peer review", "weight": 0.9 },
+      { "name": "accountability", "weight": 0.85 }
+    ],
+    "vibe": "Timed critique rounds. You leave with three notes, not twenty maybes.",
+    "member_ids": ["person-13", "person-07", "person-01", "person-09"],
+    "messages": [
+      { "author_id": "person-13", "text": "Tuesday session: 6pm PT. Format is 10min present, 15min critique, no interruptions", "ts": "2026-05-27T16:00:00Z" },
+      { "author_id": "person-07", "text": "signing up. bringing the onboarding flow that confused three testers", "ts": "2026-05-27T16:30:00Z" },
+      { "author_id": "person-01", "text": "i'll go second. need help with positioning not pixels", "ts": "2026-05-27T17:00:00Z" },
+      { "author_id": "person-09", "text": "can a first-timer lurk? want to see how harsh y'all actually are", "ts": "2026-05-27T18:00:00Z" },
+      { "author_id": "person-13", "text": "lurking fine. we critique the work not the person. you'll get a turn when ready", "ts": "2026-05-27T18:05:00Z" },
+      { "author_id": "person-07", "text": "notes from last week: 'your value prop is three value props'. still stings. still true", "ts": "2026-05-28T09:00:00Z" },
+      { "author_id": "person-01", "text": "rewrote the headline. down from 47 words to 12. feedback loop works", "ts": "2026-05-28T11:00:00Z" },
+      { "author_id": "person-13", "text": "rule reminder: one piece of praise max. we're here to improve", "ts": "2026-05-28T14:00:00Z" },
+      { "author_id": "person-09", "text": "ok i'm in for next week. nervous but the luca method seems fair", "ts": "2026-05-28T15:30:00Z" },
+      { "author_id": "person-07", "text": "whoever said 'your CTA sounds like a threat' — thank you. fixed it", "ts": "2026-05-28T20:00:00Z" }
+    ],
+    "summary": "A structured critique group running timed feedback rounds for builders and writers. Sessions are firm but fair — one compliment max, three actionable notes guaranteed. Members share positioning, UX, and copy work; the tone is direct without being cruel."
+  }
+]

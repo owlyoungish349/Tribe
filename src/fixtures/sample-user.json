@@ -1,0 +1,28 @@
+{
+  "id": "user-demo-alex",
+  "displayName": "Alex",
+  "interests": [
+    { "name": "building in public", "weight": 0.95 },
+    { "name": "fast iteration", "weight": 0.9 },
+    { "name": "honest feedback", "weight": 0.85 },
+    { "name": "speculative design", "weight": 0.8 },
+    { "name": "community building", "weight": 0.75 }
+  ],
+  "values": [
+    { "name": "authenticity", "weight": 0.9 },
+    { "name": "speed over polish", "weight": 0.85 },
+    { "name": "collaboration", "weight": 0.8 }
+  ],
+  "comm_style": "direct, energetic, prefers async but loves a good roast session",
+  "current_focus": "launching a community-matching product at VibeHack London",
+  "vibe_summary": "Ships rough demos fast, wants real connections not networking theater. Thrives on blunt peer feedback and co-building weird ideas.",
+  "source": "manual",
+  "confidence": {
+    "interests": 0.9,
+    "values": 0.85,
+    "comm_style": 0.7,
+    "current_focus": 0.95,
+    "vibe_summary": 0.8
+  },
+  "confirmed": true
+}

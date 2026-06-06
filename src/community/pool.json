@@ -1,0 +1,382 @@
+[
+  {
+    "id": "person-01",
+    "displayName": "Mia Chen",
+    "interests": [
+      { "name": "building in public", "weight": 0.95 },
+      { "name": "fast iteration", "weight": 0.9 },
+      { "name": "honest feedback", "weight": 0.88 }
+    ],
+    "values": [
+      { "name": "transparency", "weight": 0.9 },
+      { "name": "growth mindset", "weight": 0.85 }
+    ],
+    "comm_style": "blunt but kind, lives in Twitter threads and Loom roasts",
+    "current_focus": "shipping a side project every two weeks",
+    "vibe_summary": "Posts WIP screenshots at midnight, asks for the harshest feedback. Zero tolerance for vanity metrics.",
+    "source": "manual",
+    "confidence": { "interests": 0.9, "values": 0.85, "comm_style": 0.8, "current_focus": 0.9, "vibe_summary": 0.85 },
+    "confirmed": true
+  },
+  {
+    "id": "person-02",
+    "displayName": "Jordan Blake",
+    "interests": [
+      { "name": "community building", "weight": 0.92 },
+      { "name": "building in public", "weight": 0.88 },
+      { "name": "event curation", "weight": 0.75 }
+    ],
+    "values": [
+      { "name": "belonging", "weight": 0.9 },
+      { "name": "inclusion", "weight": 0.85 }
+    ],
+    "comm_style": "warm facilitator, asks great follow-up questions",
+    "current_focus": "growing a 200-person builder Discord",
+    "vibe_summary": "Connects people who should know each other. Remembers everyone's project from three months ago.",
+    "source": "manual",
+    "confidence": { "interests": 0.88, "values": 0.9, "comm_style": 0.85, "current_focus": 0.9, "vibe_summary": 0.8 },
+    "confirmed": true
+  },
+  {
+    "id": "person-03",
+    "displayName": "Sam Okonkwo",
+    "interests": [
+      { "name": "fast iteration", "weight": 0.93 },
+      { "name": "hackathons", "weight": 0.9 },
+      { "name": "demo culture", "weight": 0.85 }
+    ],
+    "values": [
+      { "name": "speed over polish", "weight": 0.95 },
+      { "name": "playfulness", "weight": 0.8 }
+    ],
+    "comm_style": "high energy, voice notes, celebrates ugly first versions",
+    "current_focus": "prepping for three hackathons this quarter",
+    "vibe_summary": "If it compiles, it ships. Famous for the 'good enough' demo that won a prize.",
+    "source": "manual",
+    "confidence": { "interests": 0.92, "values": 0.9, "comm_style": 0.88, "current_focus": 0.95, "vibe_summary": 0.85 },
+    "confirmed": true
+  },
+  {
+    "id": "person-04",
+    "displayName": "Priya Sharma",
+    "interests": [
+      { "name": "corporate strategy", "weight": 0.9 },
+      { "name": "executive networking", "weight": 0.85 },
+      { "name": "golf", "weight": 0.7 }
+    ],
+    "values": [
+      { "name": "hierarchy", "weight": 0.8 },
+      { "name": "polish", "weight": 0.9 }
+    ],
+    "comm_style": "formal, scheduled calls only, prefers decks over demos",
+    "current_focus": "MBA networking and consulting pipeline",
+    "vibe_summary": "Polished LinkedIn presence. Thinks hackathons are for students.",
+    "source": "manual",
+    "confidence": { "interests": 0.9, "values": 0.85, "comm_style": 0.9, "current_focus": 0.88, "vibe_summary": 0.8 },
+    "confirmed": true
+  },
+  {
+    "id": "person-05",
+    "displayName": "Marcus Webb",
+    "interests": [
+      { "name": "slow craftsmanship", "weight": 0.95 },
+      { "name": "typography", "weight": 0.88 },
+      { "name": "perfectionism", "weight": 0.85 }
+    ],
+    "values": [
+      { "name": "quality", "weight": 0.95 },
+      { "name": "patience", "weight": 0.9 }
+    ],
+    "comm_style": "thoughtful, long emails, revises drafts twelve times",
+    "current_focus": "a hand-bound zine that takes six months per issue",
+    "vibe_summary": "Beautiful work, glacial pace. Would rather not ship than ship something rough.",
+    "source": "manual",
+    "confidence": { "interests": 0.92, "values": 0.95, "comm_style": 0.9, "current_focus": 0.9, "vibe_summary": 0.88 },
+    "confirmed": true
+  },
+  {
+    "id": "person-06",
+    "displayName": "Elena Vasquez",
+    "interests": [
+      { "name": "academic research", "weight": 0.92 },
+      { "name": "long-form writing", "weight": 0.9 },
+      { "name": "peer review", "weight": 0.8 }
+    ],
+    "values": [
+      { "name": "rigor", "weight": 0.95 },
+      { "name": "citation", "weight": 0.85 }
+    ],
+    "comm_style": "precise, footnotes everything, async-only",
+    "current_focus": "finishing a journal article on platform governance",
+    "vibe_summary": "Deep thinker, slow responder. Feedback comes as annotated PDFs.",
+    "source": "manual",
+    "confidence": { "interests": 0.9, "values": 0.92, "comm_style": 0.88, "current_focus": 0.9, "vibe_summary": 0.85 },
+    "confirmed": true
+  },
+  {
+    "id": "person-07",
+    "displayName": "Kai Nakamura",
+    "interests": [
+      { "name": "honest feedback", "weight": 0.92 },
+      { "name": "design critique", "weight": 0.88 },
+      { "name": "building in public", "weight": 0.8 }
+    ],
+    "values": [
+      { "name": "craft", "weight": 0.85 },
+      { "name": "directness", "weight": 0.9 }
+    ],
+    "comm_style": "visual thinker, redlines everything, kind but unsparing",
+    "current_focus": "running weekly design roast sessions",
+    "vibe_summary": "Will tell you your landing page is ugly and then fix it with you.",
+    "source": "manual",
+    "confidence": { "interests": 0.88, "values": 0.9, "comm_style": 0.85, "current_focus": 0.9, "vibe_summary": 0.82 },
+    "confirmed": true
+  },
+  {
+    "id": "person-08",
+    "displayName": "Zara Patel",
+    "interests": [
+      { "name": "night coding", "weight": 0.9 },
+      { "name": "fast iteration", "weight": 0.85 },
+      { "name": "lo-fi beats", "weight": 0.7 }
+    ],
+    "values": [
+      { "name": "flow state", "weight": 0.9 },
+      { "name": "independence", "weight": 0.8 }
+    ],
+    "comm_style": "quiet until 11pm, then floods the channel with commits",
+    "current_focus": "a browser extension built entirely after midnight",
+    "vibe_summary": "Solo night owl who surfaces at 2am with a working prototype.",
+    "source": "manual",
+    "confidence": { "interests": 0.9, "values": 0.85, "comm_style": 0.88, "current_focus": 0.92, "vibe_summary": 0.8 },
+    "confirmed": true
+  },
+  {
+    "id": "person-09",
+    "displayName": "Theo Lindqvist",
+    "interests": [
+      { "name": "community building", "weight": 0.88 },
+      { "name": "mentorship", "weight": 0.85 },
+      { "name": "open source", "weight": 0.8 }
+    ],
+    "values": [
+      { "name": "generosity", "weight": 0.92 },
+      { "name": "pay it forward", "weight": 0.88 }
+    ],
+    "comm_style": "encouraging, pairs people up, celebrates small wins",
+    "current_focus": "onboarding new contributors to a popular OSS repo",
+    "vibe_summary": "The person who replies to every first-time contributor PR with warmth.",
+    "source": "manual",
+    "confidence": { "interests": 0.85, "values": 0.9, "comm_style": 0.88, "current_focus": 0.88, "vibe_summary": 0.85 },
+    "confirmed": true
+  },
+  {
+    "id": "person-10",
+    "displayName": "Nina Kowalski",
+    "interests": [
+      { "name": "real estate investing", "weight": 0.9 },
+      { "name": "passive income", "weight": 0.85 },
+      { "name": "podcasts", "weight": 0.75 }
+    ],
+    "values": [
+      { "name": "wealth building", "weight": 0.9 },
+      { "name": "leverage", "weight": 0.85 }
+    ],
+    "comm_style": "sales-forward, always pitching something",
+    "current_focus": "scaling a property portfolio",
+    "vibe_summary": "Every conversation eventually becomes a deal pitch.",
+    "source": "manual",
+    "confidence": { "interests": 0.9, "values": 0.88, "comm_style": 0.9, "current_focus": 0.9, "vibe_summary": 0.85 },
+    "confirmed": true
+  },
+  {
+    "id": "person-11",
+    "displayName": "Felix Grant",
+    "interests": [
+      { "name": "demo culture", "weight": 0.9 },
+      { "name": "building in public", "weight": 0.85 },
+      { "name": "live streaming", "weight": 0.8 }
+    ],
+    "values": [
+      { "name": "entertainment", "weight": 0.85 },
+      { "name": "audience", "weight": 0.8 }
+    ],
+    "comm_style": "performs while coding, narrates every keystroke",
+    "current_focus": "growing a Twitch channel for live builds",
+    "vibe_summary": "Builds with an audience watching. Feedback is instant and chaotic.",
+    "source": "manual",
+    "confidence": { "interests": 0.88, "values": 0.82, "comm_style": 0.9, "current_focus": 0.9, "vibe_summary": 0.85 },
+    "confirmed": true
+  },
+  {
+    "id": "person-12",
+    "displayName": "Amara Osei",
+    "interests": [
+      { "name": "wellness tech", "weight": 0.88 },
+      { "name": "mindfulness", "weight": 0.85 },
+      { "name": "slow living", "weight": 0.8 }
+    ],
+    "values": [
+      { "name": "balance", "weight": 0.95 },
+      { "name": "sustainability", "weight": 0.9 }
+    ],
+    "comm_style": "calm, reflective, prefers voice memos over text walls",
+    "current_focus": "a meditation app with zero notifications",
+    "vibe_summary": "Anti-hustle energy. Will ask if you've slept before reviewing your PR.",
+    "source": "manual",
+    "confidence": { "interests": 0.88, "values": 0.92, "comm_style": 0.9, "current_focus": 0.88, "vibe_summary": 0.85 },
+    "confirmed": true
+  },
+  {
+    "id": "person-13",
+    "displayName": "Luca Romano",
+    "interests": [
+      { "name": "honest feedback", "weight": 0.9 },
+      { "name": "peer review", "weight": 0.85 },
+      { "name": "writing workshops", "weight": 0.8 }
+    ],
+    "values": [
+      { "name": "clarity", "weight": 0.9 },
+      { "name": "accountability", "weight": 0.85 }
+    ],
+    "comm_style": "structured critique sessions, timed rounds, no fluff",
+    "current_focus": "a weekly writers' accountability group",
+    "vibe_summary": "Runs tight feedback circles. You leave with three actionable notes.",
+    "source": "manual",
+    "confidence": { "interests": 0.88, "values": 0.9, "comm_style": 0.88, "current_focus": 0.9, "vibe_summary": 0.85 },
+    "confirmed": true
+  },
+  {
+    "id": "person-14",
+    "displayName": "Hannah Brooks",
+    "interests": [
+      { "name": "enterprise SaaS", "weight": 0.9 },
+      { "name": "compliance", "weight": 0.85 },
+      { "name": "stakeholder management", "weight": 0.8 }
+    ],
+    "values": [
+      { "name": "risk mitigation", "weight": 0.92 },
+      { "name": "process", "weight": 0.88 }
+    ],
+    "comm_style": "meeting-heavy, loves RACI matrices",
+    "current_focus": "SOC 2 audit prep",
+    "vibe_summary": "Moves carefully. A hackathon demo would give her anxiety.",
+    "source": "manual",
+    "confidence": { "interests": 0.9, "values": 0.92, "comm_style": 0.9, "current_focus": 0.9, "vibe_summary": 0.88 },
+    "confirmed": true
+  },
+  {
+    "id": "person-15",
+    "displayName": "Diego Morales",
+    "interests": [
+      { "name": "fast iteration", "weight": 0.88 },
+      { "name": "community building", "weight": 0.82 },
+      { "name": "latam startups", "weight": 0.8 }
+    ],
+    "values": [
+      { "name": "resourcefulness", "weight": 0.9 },
+      { "name": "grit", "weight": 0.88 }
+    ],
+    "comm_style": "bilingual, bridges time zones, WhatsApp power user",
+    "current_focus": "connecting builders across Mexico and Brazil",
+    "vibe_summary": "Builds community infrastructure while shipping his own product.",
+    "source": "manual",
+    "confidence": { "interests": 0.85, "values": 0.88, "comm_style": 0.85, "current_focus": 0.88, "vibe_summary": 0.82 },
+    "confirmed": true
+  },
+  {
+    "id": "person-16",
+    "displayName": "Riley Tan",
+    "interests": [
+      { "name": "speculative design", "weight": 0.95 },
+      { "name": "future scenarios", "weight": 0.88 },
+      { "name": "prototyping fiction", "weight": 0.82 }
+    ],
+    "values": [
+      { "name": "imagination", "weight": 0.9 },
+      { "name": "provocation", "weight": 0.85 }
+    ],
+    "comm_style": "asks 'what if' questions, sketches dystopian product mockups",
+    "current_focus": "a workshop series on designing for 2040",
+    "vibe_summary": "Turns vague futures into cardboard prototypes. Wants co-conspirators.",
+    "source": "manual",
+    "confidence": { "interests": 0.92, "values": 0.88, "comm_style": 0.85, "current_focus": 0.9, "vibe_summary": 0.85 },
+    "confirmed": true
+  },
+  {
+    "id": "person-17",
+    "displayName": "Devon Hayes",
+    "interests": [
+      { "name": "speculative design", "weight": 0.92 },
+      { "name": "critical design", "weight": 0.88 },
+      { "name": "installation art", "weight": 0.75 }
+    ],
+    "values": [
+      { "name": "questioning defaults", "weight": 0.92 },
+      { "name": "weirdness", "weight": 0.85 }
+    ],
+    "comm_style": "philosophical tangents that somehow land as product insights",
+    "current_focus": "an exhibit on surveillance as interior design",
+    "vibe_summary": "Makes you uncomfortable in ways that spark good ideas.",
+    "source": "manual",
+    "confidence": { "interests": 0.9, "values": 0.9, "comm_style": 0.82, "current_focus": 0.88, "vibe_summary": 0.85 },
+    "confirmed": true
+  },
+  {
+    "id": "person-18",
+    "displayName": "Casey Wu",
+    "interests": [
+      { "name": "speculative design", "weight": 0.9 },
+      { "name": "design fiction", "weight": 0.88 },
+      { "name": "worldbuilding", "weight": 0.8 }
+    ],
+    "values": [
+      { "name": "narrative", "weight": 0.9 },
+      { "name": "play", "weight": 0.85 }
+    ],
+    "comm_style": "story-first, pitches ideas as short sci-fi scenes",
+    "current_focus": "writing design fiction for a climate-tech startup",
+    "vibe_summary": "Every product brief starts with 'in this world...'",
+    "source": "manual",
+    "confidence": { "interests": 0.9, "values": 0.88, "comm_style": 0.88, "current_focus": 0.9, "vibe_summary": 0.85 },
+    "confirmed": true
+  },
+  {
+    "id": "person-19",
+    "displayName": "Morgan Ellis",
+    "interests": [
+      { "name": "speculative design", "weight": 0.93 },
+      { "name": "urban futures", "weight": 0.85 },
+      { "name": "civic tech", "weight": 0.78 }
+    ],
+    "values": [
+      { "name": "public good", "weight": 0.88 },
+      { "name": "speculation as practice", "weight": 0.9 }
+    ],
+    "comm_style": "facilitates group imagining sessions, sticky notes everywhere",
+    "current_focus": "mapping London 2035 with residents, not consultants",
+    "vibe_summary": "Brings strangers together to prototype futures nobody asked for yet.",
+    "source": "manual",
+    "confidence": { "interests": 0.9, "values": 0.9, "comm_style": 0.85, "current_focus": 0.92, "vibe_summary": 0.88 },
+    "confirmed": true
+  },
+  {
+    "id": "person-20",
+    "displayName": "Avery Kim",
+    "interests": [
+      { "name": "speculative design", "weight": 0.91 },
+      { "name": "biohacking aesthetics", "weight": 0.8 },
+      { "name": "wearables", "weight": 0.75 }
+    ],
+    "values": [
+      { "name": "embodiment", "weight": 0.88 },
+      { "name": "experimentation", "weight": 0.9 }
+    ],
+    "comm_style": "shows up with physical prototypes, not slides",
+    "current_focus": "wearable devices that visualize emotional data",
+    "vibe_summary": "Body-as-interface thinker. Wants a crew to stress-test weird hardware.",
+    "source": "manual",
+    "confidence": { "interests": 0.88, "values": 0.9, "comm_style": 0.88, "current_focus": 0.9, "vibe_summary": 0.85 },
+    "confirmed": true
+  }
+]
