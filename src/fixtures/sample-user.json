@@ -1,28 +1,29 @@
 {
-  "id": "user-demo-alex",
+  "id": "sample-001",
   "displayName": "Alex",
+  "source": "chatgpt_memories",
+  "confirmed": true,
   "interests": [
-    { "name": "building in public", "weight": 0.95 },
-    { "name": "fast iteration", "weight": 0.9 },
-    { "name": "honest feedback", "weight": 0.85 },
-    { "name": "speculative design", "weight": 0.8 },
-    { "name": "community building", "weight": 0.75 }
+    { "name": "lo-fi music production", "weight": 0.9 },
+    { "name": "indie game development", "weight": 0.8 },
+    { "name": "generative art / creative coding", "weight": 0.85 },
+    { "name": "urban photography", "weight": 0.6 },
+    { "name": "rust programming language", "weight": 0.7 }
   ],
   "values": [
-    { "name": "authenticity", "weight": 0.9 },
-    { "name": "speed over polish", "weight": 0.85 },
-    { "name": "collaboration", "weight": 0.8 }
+    { "name": "build in public", "weight": 0.9 },
+    { "name": "craft over speed", "weight": 0.8 },
+    { "name": "async-first collaboration", "weight": 0.75 },
+    { "name": "open source ethos", "weight": 0.85 }
   ],
-  "comm_style": "direct, energetic, prefers async but loves a good roast session",
-  "current_focus": "launching a community-matching product at VibeHack London",
-  "vibe_summary": "Ships rough demos fast, wants real connections not networking theater. Thrives on blunt peer feedback and co-building weird ideas.",
-  "source": "manual",
+  "comm_style": "thoughtful and asynchronous — prefers written threads over calls, shares work-in-progress openly, values depth over small talk",
+  "current_focus": "finishing a lo-fi beat pack and shipping a small browser-based generative art tool before the end of Q1",
+  "vibe_summary": "a quiet builder who makes things at the intersection of code and art — most alive when deep in a project, happiest in small groups of fellow makers",
   "confidence": {
     "interests": 0.9,
     "values": 0.85,
-    "comm_style": 0.7,
+    "comm_style": 0.8,
     "current_focus": 0.95,
-    "vibe_summary": 0.8
-  },
-  "confirmed": true
+    "vibe_summary": 0.85
+  }
 }
