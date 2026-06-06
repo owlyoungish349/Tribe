@@ -1,0 +1,1 @@
+- [Persona Match project](project_persona_match.md) — VibeHack 2026, Module A complete; shared infra committed for B/C
