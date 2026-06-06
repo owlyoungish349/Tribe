@@ -11,7 +11,7 @@
     "precompute": "tsx src/community/precompute.ts"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.32.1",
+    "@cursor/sdk": "^1.0.18",
     "concurrently": "^9.1.2",
     "cors": "^2.8.5",
     "dotenv": "^17.4.2",
