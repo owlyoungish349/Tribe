@@ -221,7 +221,7 @@ export async function refineMatch(
   }
 }
 
-const FORMATION_INTEREST = "speculative design";
+const FORMATION_INTEREST = "civic navigation tools";
 
 export function detectFormationCluster(
   user: UserProfile,

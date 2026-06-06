@@ -1,77 +1,64 @@
 [
   {
-    "id": "comm-rough-draft",
-    "name": "Rough Draft Club",
-    "description": "Weekly WIP demos with honest roasts. Ship ugly, get better fast.",
+    "id": "community-01",
+    "name": "Dark Narratives",
+    "description": "Anime, fiction, and geopolitics for people who think moral clarity is overrated. We watch Berserk and talk about power, complicity, and what stories owe their characters.",
     "interests": [
-      { "name": "building in public", "weight": 0.95 },
-      { "name": "honest feedback", "weight": 0.92 },
-      { "name": "fast iteration", "weight": 0.9 }
+      { "name": "dark, morally complex anime", "weight": 0.95 },
+      { "name": "geopolitics — iran focus", "weight": 0.8 },
+      { "name": "grand strategy rpgs", "weight": 0.75 }
     ],
-    "vibe": "Chaotic-good energy. We celebrate broken demos and fix them together.",
-    "member_ids": ["person-01", "person-03", "person-07", "person-11"],
+    "vibe": "No hot takes. Dense threads. People who read the manga.",
+    "member_ids": ["person-01", "person-04", "person-05", "person-08", "person-12"],
     "messages": [
-      { "author_id": "person-01", "text": "ok who's going first tonight. i have a landing page that's aggressively beige", "ts": "2026-05-28T19:02:00Z" },
-      { "author_id": "person-03", "text": "me. fair warning it's held together with console.log and prayer", "ts": "2026-05-28T19:04:00Z" },
-      { "author_id": "person-07", "text": "that's the spirit. beige is a crime tho mia", "ts": "2026-05-28T19:05:00Z" },
-      { "author_id": "person-11", "text": "streaming my demo in 10 if anyone wants to roast live", "ts": "2026-05-28T19:08:00Z" },
-      { "author_id": "person-01", "text": "the hero copy says 'revolutionary' unironically. i need help", "ts": "2026-05-28T19:12:00Z" },
-      { "author_id": "person-03", "text": "delete the word revolutionary. all of it. start over", "ts": "2026-05-28T19:14:00Z" },
-      { "author_id": "person-07", "text": "agree. also your CTA is the same color as the background. intentional?", "ts": "2026-05-28T19:16:00Z" },
-      { "author_id": "person-01", "text": "...no. fixing now. this is why i come here", "ts": "2026-05-28T19:18:00Z" },
-      { "author_id": "person-11", "text": "chat just said my font looks like a ransom note. they're not wrong", "ts": "2026-05-28T19:22:00Z" },
-      { "author_id": "person-03", "text": "reminder: next week theme is 'worst first version'. prize for most embarrassing bug", "ts": "2026-05-28T19:30:00Z" },
-      { "author_id": "person-07", "text": "i'm bringing redlines. bring tissues", "ts": "2026-05-28T19:32:00Z" }
+      { "author_id": "person-01", "text": "ok hot take: Griffith's arc is more coherent than Thorfinn's because the corruption was always there", "ts": "2026-06-01T19:02:00Z" },
+      { "author_id": "person-05", "text": "disagree. Thorfinn had the arc of someone who didn't get to choose their corruption. that's different", "ts": "2026-06-01T19:08:00Z" },
+      { "author_id": "person-08", "text": "both are also just HOI4 playthroughs at a narrative level", "ts": "2026-06-01T19:12:00Z" },
+      { "author_id": "person-12", "text": "the Griffith debate is actually a good lens for thinking about technocracy in Iran — people who genuinely believe they're the only competent option", "ts": "2026-06-01T19:20:00Z" },
+      { "author_id": "person-04", "text": "there's a mod for this scenario. someone made an Iran 1979 start for HOI4", "ts": "2026-06-01T19:25:00Z" },
+      { "author_id": "person-05", "text": "linking it. but also this is exactly the thread I came here for", "ts": "2026-06-01T19:28:00Z" }
     ],
-    "summary": "A weekly roast-and-ship crew obsessed with ugly first versions. Members share broken demos, get blunt design and copy feedback, and compete for the most embarrassing bug. Tone is playful but direct — no one leaves without actionable notes."
+    "summary": "Dense discussion group for people who watch dark, morally complex anime and also read geopolitics and strategy. The tone is unhurried and analytical — threads connect fiction to real power dynamics, and references to HOI4 scenarios and Iranian politics coexist naturally."
   },
   {
-    "id": "comm-night-shift",
-    "name": "Night Shift Hackers",
-    "description": "After-midnight builders who commit when the world sleeps.",
+    "id": "community-02",
+    "name": "Rough Draft Builders",
+    "description": "Engineers and non-engineers who ship unfinished things for real people. No roadmaps, no sprints — just builders who believe a working prototype beats a polished deck.",
     "interests": [
-      { "name": "night coding", "weight": 0.92 },
-      { "name": "fast iteration", "weight": 0.88 },
-      { "name": "solo building", "weight": 0.8 }
+      { "name": "cloud and platform engineering", "weight": 0.85 },
+      { "name": "guitar", "weight": 0.7 },
+      { "name": "war thunder — ussr tree", "weight": 0.6 }
     ],
-    "vibe": "Quiet until 11pm, then the channel explodes with commits and lo-fi links.",
-    "member_ids": ["person-08", "person-03", "person-11"],
+    "vibe": "Ship first. Explain later. Celebrate the ugly MVP.",
+    "member_ids": ["person-02", "person-03", "person-06", "person-07", "person-13"],
     "messages": [
-      { "author_id": "person-08", "text": "2:14am. just got auth working. might sleep might not", "ts": "2026-05-29T01:14:00Z" },
-      { "author_id": "person-03", "text": "still up. push it. we'll review at lunch", "ts": "2026-05-29T01:18:00Z" },
-      { "author_id": "person-11", "text": "chat is dead but i'm coding. anyone want a sync at 3?", "ts": "2026-05-29T02:45:00Z" },
-      { "author_id": "person-08", "text": "3 works. sharing screen. warning: variable names are all 'temp'", "ts": "2026-05-29T02:50:00Z" },
-      { "author_id": "person-03", "text": "temp2 is my favorite anti-pattern. see you at 3", "ts": "2026-05-29T02:52:00Z" },
-      { "author_id": "person-08", "text": "shipped the extension. 47 tabs open. no regrets", "ts": "2026-05-29T04:30:00Z" },
-      { "author_id": "person-11", "text": "VOD is up if you missed the 3am chaos", "ts": "2026-05-29T10:00:00Z" },
-      { "author_id": "person-03", "text": "tonight: theme is 'one feature in one sitting'. no yak shaving", "ts": "2026-05-29T18:00:00Z" },
-      { "author_id": "person-08", "text": "lo-fi playlist dropped in pins. see you after dark", "ts": "2026-05-29T20:15:00Z" }
+      { "author_id": "person-06", "text": "shipped the housing benefit guide last night. it's ugly and it works. link in thread", "ts": "2026-06-02T10:00:00Z" },
+      { "author_id": "person-07", "text": "ok the USSR tank progression tracker i built in War Thunder data is also ugly and also works", "ts": "2026-06-02T10:05:00Z" },
+      { "author_id": "person-03", "text": "genuinely could not tell which project you were referring to for a second", "ts": "2026-06-02T10:08:00Z" },
+      { "author_id": "person-02", "text": "i recorded a rough guitar demo while the CI was running. sending to group", "ts": "2026-06-02T10:15:00Z" },
+      { "author_id": "person-13", "text": "next week: demo night. ugliest first version wins a session of honest roasting", "ts": "2026-06-02T11:00:00Z" },
+      { "author_id": "person-06", "text": "i'm in. my code still has console.logs in prod. i'll win", "ts": "2026-06-02T11:05:00Z" }
     ],
-    "summary": "Late-night solo builders who sync after midnight for quick reviews and accountability. The vibe is low-key during the day, then bursts into commits, screen shares, and lo-fi playlists. Perfect for people who ship best when everyone else is asleep."
+    "summary": "A show-and-tell community for builders who ship rough, functional prototypes. Cloud engineers, hobbyist musicians, and strategy game players coexist — what connects them is a bias toward making over perfecting. Demo nights celebrate broken things that work."
   },
   {
-    "id": "comm-feedback-loop",
-    "name": "Feedback Loop SF",
-    "description": "Structured peer critique for builders who want clarity, not compliments.",
+    "id": "community-03",
+    "name": "Cloud Craft",
+    "description": "Platform engineers and cloud architects who care about the craft, not the cert count. We talk GCP, Kubernetes, architecture decisions, and occasionally argue about whether Terraform is overengineered.",
     "interests": [
-      { "name": "honest feedback", "weight": 0.95 },
-      { "name": "peer review", "weight": 0.9 },
-      { "name": "accountability", "weight": 0.85 }
+      { "name": "cloud and platform engineering", "weight": 0.95 }
     ],
-    "vibe": "Timed critique rounds. You leave with three notes, not twenty maybes.",
-    "member_ids": ["person-13", "person-07", "person-01", "person-09"],
+    "vibe": "Craft over career. Privacy-first by default. No vendor worship.",
+    "member_ids": ["person-01", "person-03", "person-06", "person-07", "person-09", "person-11"],
     "messages": [
-      { "author_id": "person-13", "text": "Tuesday session: 6pm PT. Format is 10min present, 15min critique, no interruptions", "ts": "2026-05-27T16:00:00Z" },
-      { "author_id": "person-07", "text": "signing up. bringing the onboarding flow that confused three testers", "ts": "2026-05-27T16:30:00Z" },
-      { "author_id": "person-01", "text": "i'll go second. need help with positioning not pixels", "ts": "2026-05-27T17:00:00Z" },
-      { "author_id": "person-09", "text": "can a first-timer lurk? want to see how harsh y'all actually are", "ts": "2026-05-27T18:00:00Z" },
-      { "author_id": "person-13", "text": "lurking fine. we critique the work not the person. you'll get a turn when ready", "ts": "2026-05-27T18:05:00Z" },
-      { "author_id": "person-07", "text": "notes from last week: 'your value prop is three value props'. still stings. still true", "ts": "2026-05-28T09:00:00Z" },
-      { "author_id": "person-01", "text": "rewrote the headline. down from 47 words to 12. feedback loop works", "ts": "2026-05-28T11:00:00Z" },
-      { "author_id": "person-13", "text": "rule reminder: one piece of praise max. we're here to improve", "ts": "2026-05-28T14:00:00Z" },
-      { "author_id": "person-09", "text": "ok i'm in for next week. nervous but the luca method seems fair", "ts": "2026-05-28T15:30:00Z" },
-      { "author_id": "person-07", "text": "whoever said 'your CTA sounds like a threat' — thank you. fixed it", "ts": "2026-05-28T20:00:00Z" }
+      { "author_id": "person-01", "text": "writing up the Lloyds-style infra consolidation pattern I've been running. posting a draft thread later", "ts": "2026-06-03T14:00:00Z" },
+      { "author_id": "person-03", "text": "been waiting for this. the Anthos question is live — is it actually worth it or just expensive Kubernetes with a Google label", "ts": "2026-06-03T14:08:00Z" },
+      { "author_id": "person-07", "text": "expensive Kubernetes with a Google label. I said what I said", "ts": "2026-06-03T14:12:00Z" },
+      { "author_id": "person-09", "text": "disagree. the managed control plane alone saved us three sprints", "ts": "2026-06-03T14:18:00Z" },
+      { "author_id": "person-06", "text": "context: what's your node count and do you span regions", "ts": "2026-06-03T14:20:00Z" },
+      { "author_id": "person-11", "text": "posted the Istio cert notes in resources if anyone's prepping", "ts": "2026-06-03T15:00:00Z" },
+      { "author_id": "person-01", "text": "draft thread is up. tl;dr: consolidation is worth it only if you standardise networking first, not after", "ts": "2026-06-03T16:30:00Z" }
     ],
-    "summary": "A structured critique group running timed feedback rounds for builders and writers. Sessions are firm but fair — one compliment max, three actionable notes guaranteed. Members share positioning, UX, and copy work; the tone is direct without being cruel."
+    "summary": "Craft-focused cloud engineering community for people who care about architecture quality and privacy-first design over career signalling. Threads go deep on GCP, Kubernetes, and consolidation decisions. The tone is collegial but precise — people cite specific contexts before making claims."
   }
 ]

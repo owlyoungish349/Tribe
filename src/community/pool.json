@@ -1,382 +1,375 @@
 [
   {
     "id": "person-01",
-    "displayName": "Mia Chen",
+    "displayName": "Roya Azimi",
     "interests": [
-      { "name": "building in public", "weight": 0.95 },
-      { "name": "fast iteration", "weight": 0.9 },
-      { "name": "honest feedback", "weight": 0.88 }
+      { "name": "dark, morally complex anime", "weight": 0.9 },
+      { "name": "civic navigation tools", "weight": 0.92 },
+      { "name": "cloud and platform engineering", "weight": 0.8 },
+      { "name": "geopolitics — iran focus", "weight": 0.85 }
     ],
     "values": [
-      { "name": "transparency", "weight": 0.9 },
-      { "name": "growth mindset", "weight": 0.85 }
+      { "name": "usefulness over prestige", "weight": 0.95 },
+      { "name": "helping disoriented people navigate systems", "weight": 0.92 },
+      { "name": "privacy-first tooling", "weight": 0.85 }
     ],
-    "comm_style": "blunt but kind, lives in Twitter threads and Loom roasts",
-    "current_focus": "shipping a side project every two weeks",
-    "vibe_summary": "Posts WIP screenshots at midnight, asks for the harshest feedback. Zero tolerance for vanity metrics.",
+    "comm_style": "precise and unhurried — asks clarifying questions before jumping in, writes things down, very action-oriented once she has enough context",
+    "current_focus": "building a multilingual NHS GP form assistant for non-English speakers; GCP Professional Data Engineer prep",
+    "vibe_summary": "Iranian-British cloud engineer who got tired of watching family members struggle with UK health admin and decided to fix it — Berserk fan, believes systems can be designed to not humiliate people",
     "source": "manual",
-    "confidence": { "interests": 0.9, "values": 0.85, "comm_style": 0.8, "current_focus": 0.9, "vibe_summary": 0.85 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.9, "comm_style": 0.8, "current_focus": 0.9, "vibe_summary": 0.85 }
   },
   {
     "id": "person-02",
-    "displayName": "Jordan Blake",
+    "displayName": "Marcus Osei",
     "interests": [
-      { "name": "community building", "weight": 0.92 },
-      { "name": "building in public", "weight": 0.88 },
-      { "name": "event curation", "weight": 0.75 }
+      { "name": "grand strategy rpgs", "weight": 0.92 },
+      { "name": "civic navigation tools", "weight": 0.85 },
+      { "name": "geopolitics — iran focus", "weight": 0.75 },
+      { "name": "dark, morally complex anime", "weight": 0.7 }
     ],
     "values": [
-      { "name": "belonging", "weight": 0.9 },
-      { "name": "inclusion", "weight": 0.85 }
+      { "name": "usefulness over prestige", "weight": 0.9 },
+      { "name": "helping disoriented people navigate systems", "weight": 0.88 },
+      { "name": "substance over status", "weight": 0.85 }
     ],
-    "comm_style": "warm facilitator, asks great follow-up questions",
-    "current_focus": "growing a 200-person builder Discord",
-    "vibe_summary": "Connects people who should know each other. Remembers everyone's project from three months ago.",
+    "comm_style": "long-form thinker, prefers written debate over Zoom, will send you a 600-word Notion doc before a 5-minute call",
+    "current_focus": "open-source UK benefit entitlement calculator for Ghanaian diaspora; 4000 hours in EU4",
+    "vibe_summary": "DevOps engineer who writes MENA geopolitics threads in his spare time and can't stop modding EU4 — his side projects all involve helping migrants figure out what they're actually entitled to",
     "source": "manual",
-    "confidence": { "interests": 0.88, "values": 0.9, "comm_style": 0.85, "current_focus": 0.9, "vibe_summary": 0.8 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.88, "comm_style": 0.8, "current_focus": 0.9, "vibe_summary": 0.85 }
   },
   {
     "id": "person-03",
-    "displayName": "Sam Okonkwo",
+    "displayName": "Priya Srinivasan",
     "interests": [
-      { "name": "fast iteration", "weight": 0.93 },
-      { "name": "hackathons", "weight": 0.9 },
-      { "name": "demo culture", "weight": 0.85 }
+      { "name": "dark, morally complex anime", "weight": 0.88 },
+      { "name": "civic navigation tools", "weight": 0.85 },
+      { "name": "cloud and platform engineering", "weight": 0.9 }
     ],
     "values": [
-      { "name": "speed over polish", "weight": 0.95 },
-      { "name": "playfulness", "weight": 0.8 }
+      { "name": "usefulness over prestige", "weight": 0.88 },
+      { "name": "helping disoriented people navigate systems", "weight": 0.85 },
+      { "name": "fairness and noticing its absence", "weight": 0.8 }
     ],
-    "comm_style": "high energy, voice notes, celebrates ugly first versions",
-    "current_focus": "prepping for three hackathons this quarter",
-    "vibe_summary": "If it compiles, it ships. Famous for the 'good enough' demo that won a prize.",
+    "comm_style": "direct, organised, would rather show you a working prototype than explain the idea — hates meetings without agendas",
+    "current_focus": "GCP cloud architect at a healthtech, building a side project to help international students navigate UK visa renewals",
+    "vibe_summary": "cloud architect who's currently rewatching Chainsaw Man and building immigration tools — thinks the UK visa system is a war crime and also a solvable engineering problem",
     "source": "manual",
-    "confidence": { "interests": 0.92, "values": 0.9, "comm_style": 0.88, "current_focus": 0.95, "vibe_summary": 0.85 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.85, "comm_style": 0.8, "current_focus": 0.9, "vibe_summary": 0.85 }
   },
   {
     "id": "person-04",
-    "displayName": "Priya Sharma",
+    "displayName": "Taavi Mäkinen",
     "interests": [
-      { "name": "corporate strategy", "weight": 0.9 },
-      { "name": "executive networking", "weight": 0.85 },
-      { "name": "golf", "weight": 0.7 }
+      { "name": "grand strategy rpgs", "weight": 0.95 },
+      { "name": "geopolitics — iran focus", "weight": 0.78 },
+      { "name": "cloud and platform engineering", "weight": 0.82 },
+      { "name": "dark, morally complex anime", "weight": 0.65 }
     ],
     "values": [
-      { "name": "hierarchy", "weight": 0.8 },
-      { "name": "polish", "weight": 0.9 }
+      { "name": "substance over status", "weight": 0.9 },
+      { "name": "usefulness over prestige", "weight": 0.82 },
+      { "name": "fairness and noticing its absence", "weight": 0.75 }
     ],
-    "comm_style": "formal, scheduled calls only, prefers decks over demos",
-    "current_focus": "MBA networking and consulting pipeline",
-    "vibe_summary": "Polished LinkedIn presence. Thinks hackathons are for students.",
+    "comm_style": "quiet in groups, intense in 1:1s, tends to go very deep on one topic per conversation",
+    "current_focus": "HOI4 modding project simulating Cold War 2.0 scenarios; Kubernetes SRE at a Helsinki logistics startup",
+    "vibe_summary": "Finnish SRE who once modded HOI4 to simulate three alternate Cold Wars and writes about Baltic geopolitics — likes Vinland Saga for the same reasons he liked reading about the Viking Age",
     "source": "manual",
-    "confidence": { "interests": 0.9, "values": 0.85, "comm_style": 0.9, "current_focus": 0.88, "vibe_summary": 0.8 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.85, "comm_style": 0.8, "current_focus": 0.9, "vibe_summary": 0.85 }
   },
   {
     "id": "person-05",
-    "displayName": "Marcus Webb",
+    "displayName": "Laila Hosseini",
     "interests": [
-      { "name": "slow craftsmanship", "weight": 0.95 },
-      { "name": "typography", "weight": 0.88 },
-      { "name": "perfectionism", "weight": 0.85 }
+      { "name": "geopolitics — iran focus", "weight": 0.95 },
+      { "name": "dark, morally complex anime", "weight": 0.6 },
+      { "name": "civic navigation tools", "weight": 0.7 }
     ],
     "values": [
-      { "name": "quality", "weight": 0.95 },
-      { "name": "patience", "weight": 0.9 }
+      { "name": "fairness and noticing its absence", "weight": 0.95 },
+      { "name": "substance over status", "weight": 0.9 },
+      { "name": "helping disoriented people navigate systems", "weight": 0.75 }
     ],
-    "comm_style": "thoughtful, long emails, revises drafts twelve times",
-    "current_focus": "a hand-bound zine that takes six months per issue",
-    "vibe_summary": "Beautiful work, glacial pace. Would rather not ship than ship something rough.",
+    "comm_style": "writes beautifully, speaks carefully — very considered, hates hot-takes, finds most LinkedIn content physically painful",
+    "current_focus": "Substack on Iranian civil society and diaspora experience; product manager at a legal-tech startup",
+    "vibe_summary": "British-Iranian product manager with a Substack about Iranian civil society — doesn't code but understands systems deeply, connects over shared outrage at how bureaucracies treat people",
     "source": "manual",
-    "confidence": { "interests": 0.92, "values": 0.95, "comm_style": 0.9, "current_focus": 0.9, "vibe_summary": 0.88 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.9, "comm_style": 0.85, "current_focus": 0.9, "vibe_summary": 0.85 }
   },
   {
     "id": "person-06",
-    "displayName": "Elena Vasquez",
+    "displayName": "Kofi Mensah",
     "interests": [
-      { "name": "academic research", "weight": 0.92 },
-      { "name": "long-form writing", "weight": 0.9 },
-      { "name": "peer review", "weight": 0.8 }
+      { "name": "cloud and platform engineering", "weight": 0.92 },
+      { "name": "civic navigation tools", "weight": 0.82 },
+      { "name": "dark, morally complex anime", "weight": 0.75 }
     ],
     "values": [
-      { "name": "rigor", "weight": 0.95 },
-      { "name": "citation", "weight": 0.85 }
+      { "name": "usefulness over prestige", "weight": 0.88 },
+      { "name": "helping disoriented people navigate systems", "weight": 0.85 },
+      { "name": "privacy-first tooling", "weight": 0.8 }
     ],
-    "comm_style": "precise, footnotes everything, async-only",
-    "current_focus": "finishing a journal article on platform governance",
-    "vibe_summary": "Deep thinker, slow responder. Feedback comes as annotated PDFs.",
+    "comm_style": "collaborative and straightforward — ships first, discusses edge cases second, will pair-program with you at 11pm if you're shipping something interesting",
+    "current_focus": "building a digital guide for African diaspora communities navigating UK housing benefit applications; Istio certification",
+    "vibe_summary": "platform engineer obsessed with Kubernetes and also JJK — his side projects involve helping Ghanaian and Nigerian communities in the UK figure out housing benefits, because he watched his parents do it by hand",
     "source": "manual",
-    "confidence": { "interests": 0.9, "values": 0.92, "comm_style": 0.88, "current_focus": 0.9, "vibe_summary": 0.85 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.88, "comm_style": 0.8, "current_focus": 0.9, "vibe_summary": 0.85 }
   },
   {
     "id": "person-07",
-    "displayName": "Kai Nakamura",
+    "displayName": "Sven Larsson",
     "interests": [
-      { "name": "honest feedback", "weight": 0.92 },
-      { "name": "design critique", "weight": 0.88 },
-      { "name": "building in public", "weight": 0.8 }
+      { "name": "grand strategy rpgs", "weight": 0.88 },
+      { "name": "war thunder — ussr tree", "weight": 0.82 },
+      { "name": "cloud and platform engineering", "weight": 0.85 }
     ],
     "values": [
-      { "name": "craft", "weight": 0.85 },
-      { "name": "directness", "weight": 0.9 }
+      { "name": "substance over status", "weight": 0.88 },
+      { "name": "usefulness over prestige", "weight": 0.8 }
     ],
-    "comm_style": "visual thinker, redlines everything, kind but unsparing",
-    "current_focus": "running weekly design roast sessions",
-    "vibe_summary": "Will tell you your landing page is ugly and then fix it with you.",
+    "comm_style": "dry, technical, prefers Slack over meetings, occasionally sends extremely good memes with no context",
+    "current_focus": "cloud architect at a Stockholm bank; War Thunder USSR tree grind; EU4 campaign set in 1444 Muscovy",
+    "vibe_summary": "Swedish cloud architect who plays both War Thunder USSR and EU4 Russia — genuinely interested in how large systems (empires, Kubernetes clusters) fail gracefully",
     "source": "manual",
-    "confidence": { "interests": 0.88, "values": 0.9, "comm_style": 0.85, "current_focus": 0.9, "vibe_summary": 0.82 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.85, "comm_style": 0.8, "current_focus": 0.9, "vibe_summary": 0.85 }
   },
   {
     "id": "person-08",
-    "displayName": "Zara Patel",
+    "displayName": "Dara O'Brien",
     "interests": [
-      { "name": "night coding", "weight": 0.9 },
-      { "name": "fast iteration", "weight": 0.85 },
-      { "name": "lo-fi beats", "weight": 0.7 }
+      { "name": "dark, morally complex anime", "weight": 0.85 },
+      { "name": "guitar", "weight": 0.88 },
+      { "name": "grand strategy rpgs", "weight": 0.65 }
     ],
     "values": [
-      { "name": "flow state", "weight": 0.9 },
-      { "name": "independence", "weight": 0.8 }
+      { "name": "substance over status", "weight": 0.85 },
+      { "name": "fairness and noticing its absence", "weight": 0.8 }
     ],
-    "comm_style": "quiet until 11pm, then floods the channel with commits",
-    "current_focus": "a browser extension built entirely after midnight",
-    "vibe_summary": "Solo night owl who surfaces at 2am with a working prototype.",
+    "comm_style": "essayistic and reflective — tends to reframe what you said rather than agree or disagree outright",
+    "current_focus": "writing a long essay on moral ambiguity in Vinland Saga vs. actual Viking history; learning fingerpicking",
+    "vibe_summary": "Irish musician who writes long essays comparing Vinland Saga to actual historical accounts and genuinely cannot stop — not technical, but thinks about systems and fairness in the same register",
     "source": "manual",
-    "confidence": { "interests": 0.9, "values": 0.85, "comm_style": 0.88, "current_focus": 0.92, "vibe_summary": 0.8 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.85, "comm_style": 0.8, "current_focus": 0.9, "vibe_summary": 0.85 }
   },
   {
     "id": "person-09",
-    "displayName": "Theo Lindqvist",
+    "displayName": "Jin Park",
     "interests": [
-      { "name": "community building", "weight": 0.88 },
-      { "name": "mentorship", "weight": 0.85 },
-      { "name": "open source", "weight": 0.8 }
+      { "name": "dark, morally complex anime", "weight": 0.82 },
+      { "name": "cloud and platform engineering", "weight": 0.78 },
+      { "name": "grand strategy rpgs", "weight": 0.6 }
     ],
     "values": [
-      { "name": "generosity", "weight": 0.92 },
-      { "name": "pay it forward", "weight": 0.88 }
+      { "name": "usefulness over prestige", "weight": 0.7 },
+      { "name": "substance over status", "weight": 0.65 }
     ],
-    "comm_style": "encouraging, pairs people up, celebrates small wins",
-    "current_focus": "onboarding new contributors to a popular OSS repo",
-    "vibe_summary": "The person who replies to every first-time contributor PR with warmth.",
+    "comm_style": "efficient and direct, tends to want to close conversations fast — good energy but slightly transactional",
+    "current_focus": "senior engineer at a fintech scaling their GCP infrastructure; watching JJK season 2 on loop",
+    "vibe_summary": "Korean-British cloud engineer who loves JJK but works at a company he chose partly for its brand — solid values but the prestige pull is real, and his current focus is mostly career-shaped",
     "source": "manual",
-    "confidence": { "interests": 0.85, "values": 0.9, "comm_style": 0.88, "current_focus": 0.88, "vibe_summary": 0.85 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.75, "comm_style": 0.8, "current_focus": 0.9, "vibe_summary": 0.8 }
   },
   {
     "id": "person-10",
-    "displayName": "Nina Kowalski",
+    "displayName": "Amara Diallo",
     "interests": [
-      { "name": "real estate investing", "weight": 0.9 },
-      { "name": "passive income", "weight": 0.85 },
-      { "name": "podcasts", "weight": 0.75 }
+      { "name": "civic navigation tools", "weight": 0.92 },
+      { "name": "geopolitics — iran focus", "weight": 0.55 }
     ],
     "values": [
-      { "name": "wealth building", "weight": 0.9 },
-      { "name": "leverage", "weight": 0.85 }
+      { "name": "helping disoriented people navigate systems", "weight": 0.95 },
+      { "name": "fairness and noticing its absence", "weight": 0.9 },
+      { "name": "usefulness over prestige", "weight": 0.88 }
     ],
-    "comm_style": "sales-forward, always pitching something",
-    "current_focus": "scaling a property portfolio",
-    "vibe_summary": "Every conversation eventually becomes a deal pitch.",
+    "comm_style": "warm and direct, coalition-builder, tends to connect people to each other rather than hoard the thread",
+    "current_focus": "building a digital guide helping asylum seekers understand their rights at UK border control; community organiser in South London",
+    "vibe_summary": "community organiser building digital tools for asylum seekers — the civic navigation angle is her whole identity, not a side project; no anime but the same underlying ethos about systems and people who get chewed up by them",
     "source": "manual",
-    "confidence": { "interests": 0.9, "values": 0.88, "comm_style": 0.9, "current_focus": 0.9, "vibe_summary": 0.85 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.92, "comm_style": 0.85, "current_focus": 0.9, "vibe_summary": 0.88 }
   },
   {
     "id": "person-11",
-    "displayName": "Felix Grant",
+    "displayName": "Tyler Brooks",
     "interests": [
-      { "name": "demo culture", "weight": 0.9 },
-      { "name": "building in public", "weight": 0.85 },
-      { "name": "live streaming", "weight": 0.8 }
+      { "name": "cloud and platform engineering", "weight": 0.85 },
+      { "name": "grand strategy rpgs", "weight": 0.55 }
     ],
     "values": [
-      { "name": "entertainment", "weight": 0.85 },
-      { "name": "audience", "weight": 0.8 }
+      { "name": "usefulness over prestige", "weight": 0.75 },
+      { "name": "substance over status", "weight": 0.7 }
     ],
-    "comm_style": "performs while coding, narrates every keystroke",
-    "current_focus": "growing a Twitch channel for live builds",
-    "vibe_summary": "Builds with an audience watching. Feedback is instant and chaotic.",
+    "comm_style": "pragmatic and efficient, not much patience for abstraction, wants to know what you're building and what the problem is",
+    "current_focus": "platform engineering lead at a Series B; Civilization VI when not at a keyboard",
+    "vibe_summary": "cloud platform lead who plays Civ not EU4 — broadly aligned on values, but outside of work there isn't much depth of interest and the civic angle is totally absent",
     "source": "manual",
-    "confidence": { "interests": 0.88, "values": 0.82, "comm_style": 0.9, "current_focus": 0.9, "vibe_summary": 0.85 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.85, "values": 0.75, "comm_style": 0.8, "current_focus": 0.9, "vibe_summary": 0.8 }
   },
   {
     "id": "person-12",
-    "displayName": "Amara Osei",
+    "displayName": "Zeynep Arslan",
     "interests": [
-      { "name": "wellness tech", "weight": 0.88 },
-      { "name": "mindfulness", "weight": 0.85 },
-      { "name": "slow living", "weight": 0.8 }
+      { "name": "geopolitics — iran focus", "weight": 0.82 },
+      { "name": "dark, morally complex anime", "weight": 0.55 }
     ],
     "values": [
-      { "name": "balance", "weight": 0.95 },
-      { "name": "sustainability", "weight": 0.9 }
+      { "name": "fairness and noticing its absence", "weight": 0.85 },
+      { "name": "substance over status", "weight": 0.8 }
     ],
-    "comm_style": "calm, reflective, prefers voice memos over text walls",
-    "current_focus": "a meditation app with zero notifications",
-    "vibe_summary": "Anti-hustle energy. Will ask if you've slept before reviewing your PR.",
+    "comm_style": "academic and measured — cites sources in casual conversation, not in an annoying way, in a way that's actually useful",
+    "current_focus": "PhD on Turkish-Iranian border politics; occasional Monster and Attack on Titan watcher",
+    "vibe_summary": "Turkish academic researching border politics between Turkey and Iran — follows the geopolitics closely, has read Monster, but no tech background and no builder instinct",
     "source": "manual",
-    "confidence": { "interests": 0.88, "values": 0.92, "comm_style": 0.9, "current_focus": 0.88, "vibe_summary": 0.85 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.85, "comm_style": 0.8, "current_focus": 0.9, "vibe_summary": 0.85 }
   },
   {
     "id": "person-13",
     "displayName": "Luca Romano",
     "interests": [
-      { "name": "honest feedback", "weight": 0.9 },
-      { "name": "peer review", "weight": 0.85 },
-      { "name": "writing workshops", "weight": 0.8 }
+      { "name": "grand strategy rpgs", "weight": 0.78 },
+      { "name": "guitar", "weight": 0.85 }
     ],
     "values": [
-      { "name": "clarity", "weight": 0.9 },
-      { "name": "accountability", "weight": 0.85 }
+      { "name": "substance over status", "weight": 0.75 }
     ],
-    "comm_style": "structured critique sessions, timed rounds, no fluff",
-    "current_focus": "a weekly writers' accountability group",
-    "vibe_summary": "Runs tight feedback circles. You leave with three actionable notes.",
+    "comm_style": "relaxed and funny, talks about games like he's analysing literature — good vibe, light depth",
+    "current_focus": "HOI4 Italy run, learning Radiohead songs on guitar, works in Italian public sector IT",
+    "vibe_summary": "Italian civil servant who plays HOI4 religiously and is learning Radiohead on guitar — the strategy games overlap is real but there's not much else connecting to civic tech, anime, or geopolitics",
     "source": "manual",
-    "confidence": { "interests": 0.88, "values": 0.9, "comm_style": 0.88, "current_focus": 0.9, "vibe_summary": 0.85 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.85, "values": 0.75, "comm_style": 0.8, "current_focus": 0.85, "vibe_summary": 0.8 }
   },
   {
     "id": "person-14",
-    "displayName": "Hannah Brooks",
+    "displayName": "Sam Patel",
     "interests": [
-      { "name": "enterprise SaaS", "weight": 0.9 },
-      { "name": "compliance", "weight": 0.85 },
-      { "name": "stakeholder management", "weight": 0.8 }
+      { "name": "guitar", "weight": 0.8 },
+      { "name": "cloud and platform engineering", "weight": 0.65 },
+      { "name": "dark, morally complex anime", "weight": 0.55 }
     ],
     "values": [
-      { "name": "risk mitigation", "weight": 0.92 },
-      { "name": "process", "weight": 0.88 }
+      { "name": "substance over status", "weight": 0.7 }
     ],
-    "comm_style": "meeting-heavy, loves RACI matrices",
-    "current_focus": "SOC 2 audit prep",
-    "vibe_summary": "Moves carefully. A hackathon demo would give her anxiety.",
+    "comm_style": "easygoing, tends to defer rather than lead, good listener but not a strong initiator",
+    "current_focus": "backend developer at a mid-stage startup; sporadic guitar practice; watched the first season of JJK",
+    "vibe_summary": "backend dev who plays guitar and watched one season of JJK — casual overlap on a few interests but no strong driver; not particularly civic-minded or geopolitically interested",
     "source": "manual",
-    "confidence": { "interests": 0.9, "values": 0.92, "comm_style": 0.9, "current_focus": 0.9, "vibe_summary": 0.88 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.85, "values": 0.7, "comm_style": 0.8, "current_focus": 0.85, "vibe_summary": 0.75 }
   },
   {
     "id": "person-15",
-    "displayName": "Diego Morales",
+    "displayName": "Felix Wagner",
     "interests": [
-      { "name": "fast iteration", "weight": 0.88 },
-      { "name": "community building", "weight": 0.82 },
-      { "name": "latam startups", "weight": 0.8 }
+      { "name": "grand strategy rpgs", "weight": 0.72 },
+      { "name": "cloud and platform engineering", "weight": 0.65 }
     ],
     "values": [
-      { "name": "resourcefulness", "weight": 0.9 },
-      { "name": "grit", "weight": 0.88 }
+      { "name": "usefulness over prestige", "weight": 0.65 },
+      { "name": "substance over status", "weight": 0.6 }
     ],
-    "comm_style": "bilingual, bridges time zones, WhatsApp power user",
-    "current_focus": "connecting builders across Mexico and Brazil",
-    "vibe_summary": "Builds community infrastructure while shipping his own product.",
+    "comm_style": "structured and efficiency-focused, a bit corporate, prefers Jira tickets to Discord threads",
+    "current_focus": "data engineering at a Berlin logistics company; occasional EU4 sessions when he has the time",
+    "vibe_summary": "German data engineer who plays EU4 occasionally — the strategy games interest is genuine but light, and he's more pragmatic than principled about where he works or what he builds",
     "source": "manual",
-    "confidence": { "interests": 0.85, "values": 0.88, "comm_style": 0.85, "current_focus": 0.88, "vibe_summary": 0.82 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.85, "values": 0.65, "comm_style": 0.75, "current_focus": 0.85, "vibe_summary": 0.75 }
   },
   {
     "id": "person-16",
-    "displayName": "Riley Tan",
+    "displayName": "Mia Chen",
     "interests": [
-      { "name": "speculative design", "weight": 0.95 },
-      { "name": "future scenarios", "weight": 0.88 },
-      { "name": "prototyping fiction", "weight": 0.82 }
+      { "name": "dark, morally complex anime", "weight": 0.7 },
+      { "name": "cloud and platform engineering", "weight": 0.75 }
     ],
     "values": [
-      { "name": "imagination", "weight": 0.9 },
-      { "name": "provocation", "weight": 0.85 }
+      { "name": "usefulness over prestige", "weight": 0.55 },
+      { "name": "substance over status", "weight": 0.45 }
     ],
-    "comm_style": "asks 'what if' questions, sketches dystopian product mockups",
-    "current_focus": "a workshop series on designing for 2040",
-    "vibe_summary": "Turns vague futures into cardboard prototypes. Wants co-conspirators.",
+    "comm_style": "polished and self-promotional — her communication is good but the audience is always partly LinkedIn",
+    "current_focus": "staff engineer at a FAANG; writing a newsletter about engineering leadership with a subtle personal branding angle",
+    "vibe_summary": "staff engineer at a FAANG who watches anime and is technically excellent — but the prestige pull is strong and her current focus is building a personal brand, not building tools that help people",
     "source": "manual",
-    "confidence": { "interests": 0.92, "values": 0.88, "comm_style": 0.85, "current_focus": 0.9, "vibe_summary": 0.85 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.85, "values": 0.6, "comm_style": 0.75, "current_focus": 0.85, "vibe_summary": 0.8 }
   },
   {
     "id": "person-17",
-    "displayName": "Devon Hayes",
+    "displayName": "Blake Harrison",
     "interests": [
-      { "name": "speculative design", "weight": 0.92 },
-      { "name": "critical design", "weight": 0.88 },
-      { "name": "installation art", "weight": 0.75 }
+      { "name": "cloud and platform engineering", "weight": 0.6 }
     ],
     "values": [
-      { "name": "questioning defaults", "weight": 0.92 },
-      { "name": "weirdness", "weight": 0.85 }
+      { "name": "substance over status", "weight": 0.25 },
+      { "name": "usefulness over prestige", "weight": 0.2 }
     ],
-    "comm_style": "philosophical tangents that somehow land as product insights",
-    "current_focus": "an exhibit on surveillance as interior design",
-    "vibe_summary": "Makes you uncomfortable in ways that spark good ideas.",
+    "comm_style": "very network-y, name-drops, every conversation has an agenda",
+    "current_focus": "cloud solutions architect at a big consulting firm; heavy LinkedIn presence; active on the conference speaking circuit",
+    "vibe_summary": "consulting cloud architect whose main interest is being visible — cloud is the vehicle, not the craft; no anime, no civic instinct, networking theater is the point",
     "source": "manual",
-    "confidence": { "interests": 0.9, "values": 0.9, "comm_style": 0.82, "current_focus": 0.88, "vibe_summary": 0.85 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.8, "values": 0.5, "comm_style": 0.8, "current_focus": 0.85, "vibe_summary": 0.8 }
   },
   {
     "id": "person-18",
-    "displayName": "Casey Wu",
+    "displayName": "Jordan Taylor",
     "interests": [
-      { "name": "speculative design", "weight": 0.9 },
-      { "name": "design fiction", "weight": 0.88 },
-      { "name": "worldbuilding", "weight": 0.8 }
+      { "name": "dark, morally complex anime", "weight": 0.55 }
     ],
     "values": [
-      { "name": "narrative", "weight": 0.9 },
-      { "name": "play", "weight": 0.85 }
+      { "name": "substance over status", "weight": 0.3 },
+      { "name": "usefulness over prestige", "weight": 0.25 }
     ],
-    "comm_style": "story-first, pitches ideas as short sci-fi scenes",
-    "current_focus": "writing design fiction for a climate-tech startup",
-    "vibe_summary": "Every product brief starts with 'in this world...'",
+    "comm_style": "superficially warm, optimises for being liked rather than being direct",
+    "current_focus": "product manager at a startup; uses anime references in job interview answers",
+    "vibe_summary": "PM who's seen enough anime to talk about it convincingly at networking events — the overlap is surface-level; his current goal is getting promoted and building his \"PM brand\"",
     "source": "manual",
-    "confidence": { "interests": 0.9, "values": 0.88, "comm_style": 0.88, "current_focus": 0.9, "vibe_summary": 0.85 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.8, "values": 0.5, "comm_style": 0.8, "current_focus": 0.85, "vibe_summary": 0.8 }
   },
   {
     "id": "person-19",
-    "displayName": "Morgan Ellis",
+    "displayName": "Charlotte Davis",
     "interests": [
-      { "name": "speculative design", "weight": 0.93 },
-      { "name": "urban futures", "weight": 0.85 },
-      { "name": "civic tech", "weight": 0.78 }
+      { "name": "dark, morally complex anime", "weight": 0.45 }
     ],
     "values": [
-      { "name": "public good", "weight": 0.88 },
-      { "name": "speculation as practice", "weight": 0.9 }
+      { "name": "substance over status", "weight": 0.25 }
     ],
-    "comm_style": "facilitates group imagining sessions, sticky notes everywhere",
-    "current_focus": "mapping London 2035 with residents, not consultants",
-    "vibe_summary": "Brings strangers together to prototype futures nobody asked for yet.",
+    "comm_style": "high-energy content-brain, frames everything as a narrative or a hook",
+    "current_focus": "growth marketing; writes LinkedIn posts about anime that are really about professional resilience",
+    "vibe_summary": "growth marketer who watched Demon Slayer and now references it in career content — the anime overlap is almost entirely aesthetic; no tech depth, no civic instinct, substance-over-status is not a real operating principle",
     "source": "manual",
-    "confidence": { "interests": 0.9, "values": 0.9, "comm_style": 0.85, "current_focus": 0.92, "vibe_summary": 0.88 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.8, "values": 0.5, "comm_style": 0.8, "current_focus": 0.85, "vibe_summary": 0.8 }
   },
   {
     "id": "person-20",
-    "displayName": "Avery Kim",
+    "displayName": "Brad Wilson",
     "interests": [
-      { "name": "speculative design", "weight": 0.91 },
-      { "name": "biohacking aesthetics", "weight": 0.8 },
-      { "name": "wearables", "weight": 0.75 }
+      { "name": "cloud and platform engineering", "weight": 0.65 }
     ],
     "values": [
-      { "name": "embodiment", "weight": 0.88 },
-      { "name": "experimentation", "weight": 0.9 }
+      { "name": "usefulness over prestige", "weight": 0.2 },
+      { "name": "substance over status", "weight": 0.2 }
     ],
-    "comm_style": "shows up with physical prototypes, not slides",
-    "current_focus": "wearable devices that visualize emotional data",
-    "vibe_summary": "Body-as-interface thinker. Wants a crew to stress-test weird hardware.",
+    "comm_style": "corporate-formal, very ROI-focused, every side conversation becomes a pitch",
+    "current_focus": "VP Engineering at a mid-market SaaS; golf; executive coaching sideline",
+    "vibe_summary": "VP of Engineering whose hobbies are golf and executive coaching — cloud is a career vehicle, prestige is the goal, and the values alignment is close to zero",
     "source": "manual",
-    "confidence": { "interests": 0.88, "values": 0.9, "comm_style": 0.88, "current_focus": 0.9, "vibe_summary": 0.85 },
-    "confirmed": true
+    "confirmed": true,
+    "confidence": { "interests": 0.8, "values": 0.5, "comm_style": 0.75, "current_focus": 0.85, "vibe_summary": 0.8 }
   }
 ]

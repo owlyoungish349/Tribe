@@ -1,7 +1,10 @@
 import { useState } from "react";
 import type { UserProfile, FeedbackEvent } from "./shared/contract";
 import { Onboarding } from "./onboarding/Onboarding";
+import { OnboardingStub } from "./onboarding/OnboardingStub";
 import { Suggestions } from "./community/Suggestions";
+
+const isDemoMode = import.meta.env.VITE_DEMO_MODE === "true";
 
 type View = "onboarding" | "suggestions";
 
@@ -29,7 +32,9 @@ export default function App() {
       <Header userName={user?.displayName} />
       <main className="mx-auto max-w-5xl px-4 py-6">
         {view === "onboarding" && (
-          <Onboarding onComplete={handleOnComplete} />
+          isDemoMode
+            ? <OnboardingStub onComplete={handleOnComplete} />
+            : <Onboarding onComplete={handleOnComplete} />
         )}
         {view === "suggestions" && user && (
           <Suggestions user={user} onFeedback={handleFeedback} />
