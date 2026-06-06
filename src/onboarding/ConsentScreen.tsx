@@ -9,9 +9,9 @@ interface Props {
 function WeightBadge({ weight }: { weight: number }) {
   const pct = Math.round(weight * 100);
   const color =
-    weight >= 0.8 ? 'bg-violet-600' :
-    weight >= 0.6 ? 'bg-indigo-600' :
-    'bg-slate-600';
+    weight >= 0.8 ? 'bg-tribe-600' :
+    weight >= 0.6 ? 'bg-tribe-500' :
+    'bg-tribe-400';
   return (
     <span className={`${color} text-white text-xs px-1.5 py-0.5 rounded-full ml-1.5 font-mono`}>
       {pct}
@@ -22,7 +22,7 @@ function WeightBadge({ weight }: { weight: number }) {
 function ConfidencePill({ confidence }: { confidence: number }) {
   if (confidence >= 0.7) return null;
   return (
-    <span className="text-amber-400 text-xs ml-1" title="Low confidence — B will probe this">
+    <span className="text-ember-500 text-xs ml-1" title="Low confidence — B will probe this">
       ~
     </span>
   );
@@ -59,9 +59,9 @@ function ScoredChipList({
     <div className="flex flex-wrap gap-2">
       {items.map((item, i) =>
         editing === i ? (
-          <div key={i} className="flex items-center gap-1 bg-slate-700 rounded-xl px-2 py-1">
+          <div key={i} className="flex items-center gap-1 rounded-xl border border-tribe-300 bg-tribe-100 px-2 py-1">
             <input
-              className="bg-transparent text-white text-sm outline-none w-28"
+              className="w-28 bg-transparent text-sm text-tribe-800 outline-none"
               value={editName}
               onChange={e => setEditName(e.target.value)}
               onBlur={() => commitEdit(i)}
@@ -69,7 +69,7 @@ function ScoredChipList({
               autoFocus
             />
             <input
-              className="bg-transparent text-violet-300 text-xs font-mono outline-none w-10"
+              className="w-10 bg-transparent text-xs font-mono text-tribe-500 outline-none"
               value={editWeight}
               onChange={e => setEditWeight(e.target.value)}
               onBlur={() => commitEdit(i)}
@@ -80,13 +80,13 @@ function ScoredChipList({
           <button
             key={i}
             onClick={() => startEdit(i)}
-            className="group flex items-center bg-slate-800 hover:bg-slate-700 border border-slate-600 rounded-xl px-3 py-1.5 text-sm text-slate-200 transition-colors"
+            className="group flex items-center rounded-xl border border-tribe-200 bg-white px-3 py-1.5 text-sm text-tribe-700 transition-colors hover:bg-tribe-50"
           >
             {item.name}
             <WeightBadge weight={item.weight} />
             <span
               onClick={e => { e.stopPropagation(); onDelete(i); }}
-              className="ml-2 text-slate-500 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity text-xs"
+              className="ml-2 text-xs text-tribe-400 opacity-0 transition-opacity hover:text-red-500 group-hover:opacity-100"
             >
               ×
             </span>
@@ -116,17 +116,16 @@ export function ConsentScreen({ profile: initial, onConfirm }: Props) {
   const conf = profile.confidence;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-950 via-indigo-950 to-slate-950 p-4 flex items-start justify-center pt-10 pb-20">
-      <div className="max-w-xl w-full space-y-7">
-        <div className="space-y-1">
-          <p className="text-violet-400 text-xs font-medium uppercase tracking-widest">Your profile</p>
-          <h2 className="text-2xl font-bold text-white">
-            Does this look like you, {profile.displayName}?
-          </h2>
-          <p className="text-slate-400 text-sm">
-            Tap any chip to edit, × to remove. Confirm when it feels right.
-          </p>
-        </div>
+    <div className="mx-auto max-w-xl space-y-7 px-4 py-10">
+      <div className="space-y-1">
+        <p className="text-xs font-semibold uppercase tracking-widest text-tribe-400">Your profile</p>
+        <h2 className="font-display text-3xl font-semibold text-tribe-800">
+          Does this look like you, {profile.displayName}?
+        </h2>
+        <p className="text-sm text-tribe-500">
+          Tap any chip to edit, × to remove. Confirm when it feels right.
+        </p>
+      </div>
 
         <Section
           label="Interests"
@@ -170,16 +169,15 @@ export function ConsentScreen({ profile: initial, onConfirm }: Props) {
           multiline
         />
 
-        <button
-          onClick={handleConfirm}
-          className="w-full bg-violet-600 hover:bg-violet-500 text-white rounded-xl py-3.5 font-semibold text-base transition-colors"
-        >
-          Confirm — this is me →
-        </button>
-        <p className="text-slate-500 text-xs text-center">
-          Edits above are only used for matching — nothing is stored.
-        </p>
-      </div>
+      <button
+        onClick={handleConfirm}
+        className="w-full rounded-xl bg-tribe-600 py-3.5 text-base font-semibold text-white transition-colors hover:bg-tribe-700"
+      >
+        Confirm — this is me →
+      </button>
+      <p className="text-center text-xs text-tribe-400">
+        Edits above are only used for matching — nothing is stored.
+      </p>
     </div>
   );
 }
@@ -198,9 +196,9 @@ function Section({
   return (
     <div className="space-y-2">
       <div className="flex items-center gap-1">
-        <span className="text-xs text-slate-400 font-medium uppercase tracking-wider">{label}</span>
+        <span className="text-xs font-semibold uppercase tracking-wider text-tribe-400">{label}</span>
         {confidence !== undefined && <ConfidencePill confidence={confidence} />}
-        {hint && <span className="text-slate-600 text-xs ml-1">· {hint}</span>}
+        {hint && <span className="ml-1 text-xs text-tribe-400">· {hint}</span>}
       </div>
       {children}
     </div>
@@ -223,7 +221,7 @@ function EditableField({
   return (
     <div className="space-y-1.5">
       <div className="flex items-center gap-1">
-        <span className="text-xs text-slate-400 font-medium uppercase tracking-wider">{label}</span>
+        <span className="text-xs font-semibold uppercase tracking-wider text-tribe-400">{label}</span>
         {confidence !== undefined && <ConfidencePill confidence={confidence} />}
       </div>
       {multiline ? (
@@ -231,14 +229,14 @@ function EditableField({
           value={value}
           onChange={e => onChange(e.target.value)}
           rows={3}
-          className="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-violet-500 resize-none leading-relaxed"
+          className="w-full resize-none rounded-xl border border-tribe-200 bg-white px-3 py-2.5 text-sm leading-relaxed text-tribe-800 focus:border-tribe-400 focus:outline-none focus:ring-1 focus:ring-tribe-400"
         />
       ) : (
         <input
           type="text"
           value={value}
           onChange={e => onChange(e.target.value)}
-          className="w-full bg-slate-800/60 border border-slate-700 rounded-xl px-3 py-2.5 text-white text-sm focus:outline-none focus:ring-2 focus:ring-violet-500"
+          className="w-full rounded-xl border border-tribe-200 bg-white px-3 py-2.5 text-sm text-tribe-800 focus:border-tribe-400 focus:outline-none focus:ring-1 focus:ring-tribe-400"
         />
       )}
     </div>

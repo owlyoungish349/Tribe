@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { CommunityProfile, Ranked } from "../../shared/contract";
+import { normalizeFitScore } from "../matching";
 
 type Props = {
   community: CommunityProfile;
@@ -7,6 +8,9 @@ type Props = {
   onComplete: (answers: string[]) => void;
   refined?: Ranked | null;
   loading?: boolean;
+  joined?: boolean;
+  onConfirmJoin?: () => void;
+  embedded?: boolean;
 };
 
 const QUICK_ANSWERS = [
@@ -21,6 +25,9 @@ export function InterviewPanel({
   onComplete,
   refined,
   loading,
+  joined,
+  onConfirmJoin,
+  embedded = false,
 }: Props) {
   const [answers, setAnswers] = useState<string[]>(
     Array(questions.length).fill("")
@@ -46,18 +53,37 @@ export function InterviewPanel({
           Refined match — {community.name}
         </p>
         <p className="mb-2 font-display text-2xl font-semibold text-tribe-800">
-          {refined.score}% fit
+          {normalizeFitScore(refined.score)}% fit
         </p>
         <p className="text-sm leading-relaxed text-tribe-700">{refined.reason}</p>
+        {joined ? (
+          <p className="mt-4 rounded-xl bg-tribe-600/10 px-4 py-3 text-center text-sm font-medium text-tribe-700">
+            ✓ You're in {community.name} — chat is open
+          </p>
+        ) : onConfirmJoin ? (
+          <button
+            type="button"
+            onClick={onConfirmJoin}
+            className="mt-4 w-full rounded-xl bg-tribe-600 px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-tribe-700"
+          >
+            Join {community.name} & open chat
+          </button>
+        ) : null}
       </section>
     );
   }
 
+  const shell = embedded
+    ? "space-y-4"
+    : "rounded-2xl border border-tribe-200 bg-white p-6 shadow-sm";
+
   return (
-    <section className="rounded-2xl border border-tribe-200 bg-white p-6 shadow-sm">
-      <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-tribe-400">
-        Quick fit check
-      </p>
+    <div className={shell}>
+      {!embedded && (
+        <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-tribe-400">
+          Quick fit check
+        </p>
+      )}
       <h3 className="mb-4 font-display text-xl font-semibold text-tribe-800">
         Would {community.name} work for you?
       </h3>
@@ -101,6 +127,6 @@ export function InterviewPanel({
       >
         {loading ? "Refining match..." : "See my refined fit"}
       </button>
-    </section>
+    </div>
   );
 }

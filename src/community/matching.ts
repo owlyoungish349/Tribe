@@ -32,7 +32,17 @@ Return ONLY a JSON array of strings, e.g. ["question 1", "question 2"]`;
 
 const REFINE_SYSTEM = `You re-score community fit after the user answered interview questions.
 Return ONLY valid JSON: {"score": number, "reason": string}
+score MUST be an integer from 0 to 100 (e.g. 78 means 78% fit — never use 0.78 or 7.8).
 The reason should reference their answers and sharpen the fit narrative. One sentence.`;
+
+/** Normalize agent scores that may arrive on 0-1 or 0-10 scales into 0-100. */
+export function normalizeFitScore(raw: number): number {
+  let score = Number(raw);
+  if (!Number.isFinite(score)) return 50;
+  if (score > 0 && score <= 1) score *= 100;
+  else if (score > 1 && score <= 10) score *= 10;
+  return Math.round(Math.min(100, Math.max(0, score)));
+}
 
 const FORM_SYSTEM = `You generate a starter community profile for a newly founded space.
 Return ONLY valid JSON: {"description": string, "vibe": string, "summary": string}
@@ -133,7 +143,7 @@ async function judgeBatchLive(
         const entry = parsed.find((r) => r.id === candidate.id);
         return {
           target: candidate,
-          score: Math.min(100, Math.max(0, entry?.score ?? 50)),
+          score: normalizeFitScore(entry?.score ?? 50),
           reason: entry?.reason ?? "Some overlap on interests and vibe.",
         };
       });
@@ -215,7 +225,7 @@ export async function refineMatch(
     });
     return {
       target: community,
-      score: Math.min(100, Math.max(0, result.score)),
+      score: normalizeFitScore(result.score),
       reason: result.reason,
     };
   } catch {
