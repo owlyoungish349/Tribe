@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import type {
   UserProfile,
   CommunityProfile,
@@ -63,11 +63,12 @@ export function CommunityModule({ user }: Props) {
     const onProgress = (p: MatchProgress) => setLoadingStatus(p.label);
 
     try {
-      setLoadingStatus("Agent scoring people...");
-      const people = await suggestPeople(user, pool, onProgress);
-
-      setLoadingStatus("Agent scoring communities...");
-      const comms = await suggestCommunities(user, communities, onProgress);
+      setLoadingStatus("Agent scoring people & communities...");
+      // Run people + community judging concurrently — independent agent calls.
+      const [people, comms] = await Promise.all([
+        suggestPeople(user, pool, onProgress),
+        suggestCommunities(user, communities, onProgress),
+      ]);
 
       setPeopleSuggestions(people);
       setCommunitySuggestions(comms);
@@ -93,7 +94,12 @@ export function CommunityModule({ user }: Props) {
     }
   }, [user, communities, pool]);
 
+  // Guard against React StrictMode double-invoking the effect in dev, which
+  // would otherwise fire every agent call twice.
+  const startedRef = useRef(false);
   useEffect(() => {
+    if (startedRef.current) return;
+    startedRef.current = true;
     loadSuggestions();
   }, [loadSuggestions]);
 

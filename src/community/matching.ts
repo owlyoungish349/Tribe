@@ -92,49 +92,55 @@ async function judgeBatchLive(
   onProgress?: (p: MatchProgress) => void
 ): Promise<Ranked[]> {
   const BATCH_SIZE = 10;
-  const results: Ranked[] = [];
-  const totalBatches = Math.ceil(candidates.length / BATCH_SIZE);
-
+  const batches: (UserProfile | CommunityProfile)[][] = [];
   for (let i = 0; i < candidates.length; i += BATCH_SIZE) {
-    const batchIndex = Math.floor(i / BATCH_SIZE) + 1;
-    const batch = candidates.slice(i, i + BATCH_SIZE);
+    batches.push(candidates.slice(i, i + BATCH_SIZE));
+  }
 
-    onProgress?.({
-      label: `Agent scoring ${kind === "person" ? "people" : "communities"} (${batchIndex}/${totalBatches})`,
-      current: batchIndex,
-      total: totalBatches,
-    });
+  const label = kind === "person" ? "people" : "communities";
+  let done = 0;
+  onProgress?.({
+    label: `Agent scoring ${label} (0/${batches.length})`,
+    current: 0,
+    total: batches.length,
+  });
 
-    const candidatesBlock = batch
-      .map((c, idx) => `--- CANDIDATE ${idx + 1} ---\n${candidateLabel(c, kind)}`)
-      .join("\n\n");
+  // Run all batches concurrently — each is an independent agent call.
+  const batchResults = await Promise.all(
+    batches.map(async (batch) => {
+      const candidatesBlock = batch
+        .map((c, idx) => `--- CANDIDATE ${idx + 1} ---\n${candidateLabel(c, kind)}`)
+        .join("\n\n");
 
-    const userContent = `USER:\n${profileToText(user)}\n\nCANDIDATES (${kind}, score each):\n${candidatesBlock}`;
+      const userContent = `USER:\n${profileToText(user)}\n\nCANDIDATES (${kind}, score each):\n${candidatesBlock}`;
 
-    try {
-      const raw = await askClaude(BATCH_JUDGE_SYSTEM, userContent);
-      const parsed = parseJson<BatchJudgeResult[]>(raw, []);
+      let parsed: BatchJudgeResult[] = [];
+      try {
+        const raw = await askClaude(BATCH_JUDGE_SYSTEM, userContent);
+        parsed = parseJson<BatchJudgeResult[]>(raw, []);
+      } catch {
+        parsed = [];
+      }
 
-      for (const candidate of batch) {
+      done += 1;
+      onProgress?.({
+        label: `Agent scoring ${label} (${done}/${batches.length})`,
+        current: done,
+        total: batches.length,
+      });
+
+      return batch.map((candidate): Ranked => {
         const entry = parsed.find((r) => r.id === candidate.id);
-        results.push({
+        return {
           target: candidate,
           score: Math.min(100, Math.max(0, entry?.score ?? 50)),
           reason: entry?.reason ?? "Some overlap on interests and vibe.",
-        });
-      }
-    } catch {
-      for (const candidate of batch) {
-        results.push({
-          target: candidate,
-          score: 50,
-          reason: "Agent call failed — showing with neutral score.",
-        });
-      }
-    }
-  }
+        };
+      });
+    })
+  );
 
-  return results.sort((a, b) => b.score - a.score);
+  return batchResults.flat().sort((a, b) => b.score - a.score);
 }
 
 export async function suggestPeople(
