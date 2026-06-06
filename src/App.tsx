@@ -1,30 +1,53 @@
-import { useState } from 'react';
-import type { UserProfile } from './shared/contract';
-import { Onboarding } from './onboarding/Onboarding';
+import { useState } from "react";
+import type { UserProfile, FeedbackEvent } from "./shared/contract";
+import { Onboarding } from "./onboarding/Onboarding";
+import { Suggestions } from "./community/Suggestions";
 
-// Module B and C will be imported and composed here once they're built.
-// For now, the shell renders a confirmation view post-onboarding.
+type View = "onboarding" | "suggestions";
 
 export default function App() {
-  const [profile, setProfile] = useState<UserProfile | null>(null);
+  const [view, setView] = useState<View>("onboarding");
+  const [user, setUser] = useState<UserProfile | null>(null);
 
-  if (!profile) {
-    return <Onboarding onComplete={p => setProfile(p)} />;
+  function handleOnComplete(profile: UserProfile) {
+    if (!profile.confirmed) {
+      console.warn("Onboarding handed over an unconfirmed profile; refusing.");
+      return;
+    }
+    setUser(profile);
+    setView("suggestions");
   }
 
-  // Placeholder — replace with Module B once it hands off a component
+  // Module C is not wired yet. Until it lands, log feedback events so the
+  // plumbing exists end-to-end and B's cards can fire without errors.
+  function handleFeedback(event: FeedbackEvent) {
+    console.log("[feedback]", event);
+  }
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-violet-950 via-indigo-950 to-slate-950 flex items-center justify-center p-4">
-      <div className="max-w-md w-full text-center space-y-4">
-        <div className="text-4xl">✓</div>
-        <h2 className="text-2xl font-bold text-white">Profile confirmed, {profile.displayName}!</h2>
-        <p className="text-slate-400 text-sm">
-          Handing off to community matching…
-        </p>
-        <pre className="text-left text-xs text-slate-400 bg-slate-800/60 rounded-xl p-4 overflow-auto max-h-80">
-          {JSON.stringify(profile, null, 2)}
-        </pre>
-      </div>
+    <div className="min-h-screen bg-neutral-50 text-neutral-900">
+      <Header userName={user?.displayName} />
+      <main className="mx-auto max-w-5xl px-4 py-6">
+        {view === "onboarding" && (
+          <Onboarding onComplete={handleOnComplete} />
+        )}
+        {view === "suggestions" && user && (
+          <Suggestions user={user} onFeedback={handleFeedback} />
+        )}
+      </main>
     </div>
+  );
+}
+
+function Header({ userName }: { userName?: string }) {
+  return (
+    <header className="border-b border-neutral-200 bg-white">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
+        <div className="text-base font-semibold tracking-tight">Persona Match</div>
+        {userName && (
+          <div className="text-sm text-neutral-600">Hi, {userName}</div>
+        )}
+      </div>
+    </header>
   );
 }
