@@ -4,14 +4,13 @@ import { Onboarding } from "./onboarding/Onboarding";
 import { OnboardingStub } from "./onboarding/OnboardingStub";
 import { Suggestions } from "./community/Suggestions";
 import { loadProfile, saveProfile, clearAccount } from "./community/persistence";
+import { TribeLogo } from "./components/TribeLogo";
 
 const isDemoMode = import.meta.env.VITE_DEMO_MODE === "true";
 
 type View = "onboarding" | "suggestions";
 
 export default function App() {
-  // Account persistence (product override of the in-memory-only handover rule):
-  // resume a saved profile straight into suggestions on refresh.
   const [user, setUser] = useState<UserProfile | null>(() => loadProfile());
   const [view, setView] = useState<View>(() =>
     loadProfile() ? "suggestions" : "onboarding"
@@ -33,8 +32,6 @@ export default function App() {
     setView("onboarding");
   }
 
-  // Module C is not wired yet. Until it lands, log feedback events so the
-  // plumbing exists end-to-end and B's cards can fire without errors.
   function handleFeedback(event: FeedbackEvent) {
     console.log("[feedback]", event);
   }
@@ -45,12 +42,13 @@ export default function App() {
         userName={user?.displayName}
         onStartOver={view === "suggestions" ? handleStartOver : undefined}
       />
-      <main className="mx-auto max-w-5xl px-4 py-6">
-        {view === "onboarding" && (
-          isDemoMode
-            ? <OnboardingStub onComplete={handleOnComplete} />
-            : <Onboarding onComplete={handleOnComplete} />
-        )}
+      <main className="mx-auto max-w-5xl px-4 py-6 sm:px-6 sm:py-8">
+        {view === "onboarding" &&
+          (isDemoMode ? (
+            <OnboardingStub onComplete={handleOnComplete} />
+          ) : (
+            <Onboarding onComplete={handleOnComplete} />
+          ))}
         {view === "suggestions" && user && (
           <Suggestions user={user} onFeedback={handleFeedback} />
         )}
@@ -67,21 +65,32 @@ function Header({
   onStartOver?: () => void;
 }) {
   return (
-    <header className="border-b border-tribe-200 bg-white/80 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-        <div className="font-display text-lg font-semibold tracking-tight text-tribe-800">
-          Persona Match
+    <header className="sticky top-0 z-40 border-b border-tribe-200/80 bg-white/90 backdrop-blur-md">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
+        <div className="flex items-center gap-2.5">
+          <TribeLogo className="h-9 w-9 shrink-0 drop-shadow-sm" />
+          <div>
+            <div className="font-display text-base font-semibold leading-tight text-tribe-800 sm:text-lg">
+              Tribe
+            </div>
+            {isDemoMode ? (
+              <span className="badge-demo">Demo</span>
+            ) : (
+              <span className="badge-live">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-tribe-500" />
+                Live
+              </span>
+            )}
+          </div>
         </div>
         <div className="flex items-center gap-3">
           {userName && (
-            <div className="text-sm text-tribe-500">Hi, {userName}</div>
+            <span className="hidden text-sm text-tribe-500 sm:inline">
+              Hi, {userName}
+            </span>
           )}
           {onStartOver && (
-            <button
-              type="button"
-              onClick={onStartOver}
-              className="rounded-lg border border-tribe-200 px-3 py-1.5 text-xs font-medium text-tribe-500 transition-colors hover:border-tribe-300 hover:text-tribe-700"
-            >
+            <button type="button" onClick={onStartOver} className="btn-ghost px-3 py-1.5 text-xs">
               Start over
             </button>
           )}

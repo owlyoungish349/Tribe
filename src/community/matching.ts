@@ -18,7 +18,7 @@ export type MatchProgress = {
   total: number;
 };
 
-const BATCH_JUDGE_SYSTEM = `You are a community-matching judge for a persona-matching app.
+const BATCH_JUDGE_SYSTEM = `You are a community-matching judge for Tribe, a community-matching app.
 Given a USER and multiple CANDIDATES, score EACH candidate's fit with the user from 0-100.
 Use the FULL range — weak fits 20-45, decent 50-70, strong 75-90, exceptional 90+.
 Return ONLY valid JSON array with one entry per candidate:

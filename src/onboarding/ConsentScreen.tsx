@@ -109,7 +109,7 @@ export function ConsentScreen({ profile: initial, onConfirm }: Props) {
 
   function handleConfirm() {
     const confirmed = { ...profile, confirmed: true };
-    console.log('[PersonaMatch] onComplete profile:', confirmed);
+    console.log('[Tribe] onComplete profile:', confirmed);
     onConfirm(confirmed);
   }
 

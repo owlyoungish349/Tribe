@@ -21,7 +21,7 @@ export function IntroScreen({ onContinue }: Props) {
     <div className="mx-auto max-w-xl space-y-8 px-4 py-10">
       <div className="space-y-2 text-center">
         <p className="text-xs font-semibold uppercase tracking-widest text-tribe-400">
-          Persona Match
+          Tribe
         </p>
         <h1 className="font-display text-4xl font-semibold leading-tight text-tribe-800">
           Bring what your AI<br />already knows about you.

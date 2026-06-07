@@ -17,12 +17,12 @@ import {
   isCommunity,
   type MatchProgress,
 } from "./matching";
-import { isDemoMode } from "./demoMode";
 import { SuggestionCard } from "./components/SuggestionCard";
 import { FormationBanner } from "./components/FormationBanner";
 import { ExpansionPanel } from "./components/ExpansionPanel";
 import { ChatPanel } from "./components/ChatPanel";
 import { JoinFlowModal } from "./components/JoinFlowModal";
+import { StatusLog } from "./components/StatusLog";
 import { loadCommunityState, saveCommunityState } from "./persistence";
 
 type Props = {
@@ -228,24 +228,14 @@ export function CommunityModule({ user }: Props) {
   const joinedCommunities = communities.filter((c) => joinedIds.has(c.id));
 
   return (
-    <div className="mx-auto max-w-4xl space-y-8 px-4 py-8">
+    <div className="mx-auto max-w-4xl space-y-8">
       <header className="text-center">
-        <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-tribe-400">
-          Module B — Community & Connection
-          {isDemoMode ? (
-            <span className="ml-2 rounded-full bg-ember-400/25 px-2 py-0.5 text-ember-600">
-              demo mode
-            </span>
-          ) : (
-            <span className="ml-2 rounded-full bg-tribe-600/15 px-2 py-0.5 text-tribe-700">
-              live agent
-            </span>
-          )}
-        </p>
-        <h1 className="font-display text-3xl font-bold text-tribe-800">
+        <h1 className="font-display text-3xl font-bold text-tribe-800 sm:text-4xl">
           Hey {user.displayName}, here's your tribe
         </h1>
-        <p className="mt-2 text-sm text-tribe-500">{user.vibe_summary}</p>
+        <p className="mx-auto mt-3 max-w-lg text-sm leading-relaxed text-tribe-500">
+          {user.vibe_summary}
+        </p>
       </header>
 
       {error && (
@@ -255,41 +245,18 @@ export function CommunityModule({ user }: Props) {
       )}
 
       {phase === "loading" && (
-        <div className="mx-auto flex max-w-md flex-col items-center gap-4 py-16">
-          <div className="h-8 w-8 animate-spin rounded-full border-2 border-tribe-300 border-t-tribe-600" />
-          <div className="w-full rounded-2xl border border-tribe-200 bg-white p-4 shadow-sm">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-tribe-400">
-              What the agent is doing
-            </p>
-            <ul className="space-y-1.5">
-              {progressLog.map((line, i) => {
-                const isLast = i === progressLog.length - 1;
-                return (
-                  <li
-                    key={i}
-                    className={`flex items-center gap-2 text-sm ${
-                      isLast ? "text-tribe-800" : "text-tribe-400"
-                    }`}
-                  >
-                    <span className={isLast ? "text-ember-500" : "text-tribe-300"}>
-                      {isLast ? "▸" : "✓"}
-                    </span>
-                    {line}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <p className="max-w-sm text-center text-xs text-tribe-500">
-            Every score and reason is generated live by the Cursor agent — expect ~30–60s on first load.
-          </p>
+        <div className="mx-auto flex max-w-md flex-col items-center gap-4 py-12">
+          <StatusLog
+            lines={progressLog}
+            hint="Every match is scored live by the agent — expect ~30–60s on first load."
+          />
         </div>
       )}
 
       {phase !== "loading" && (
         <>
           {joinedCommunities.length > 0 && (
-            <section className="rounded-2xl border border-tribe-200 bg-white shadow-sm">
+            <section className="card overflow-hidden">
               <div className="flex items-center justify-between border-b border-tribe-100 px-5 py-3">
                 <h2 className="font-display text-lg font-semibold text-tribe-800">
                   My chats
