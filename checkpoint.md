@@ -1,4 +1,4 @@
-# Persona Match — Checkpoint (B-checkpoint branch)
+# Tribe — Checkpoint (B-checkpoint branch)
 
 **Date:** 2026-06-06  
 **Branch:** `B-checkpoint`  

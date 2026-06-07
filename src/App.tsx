@@ -4,6 +4,7 @@ import { Onboarding } from "./onboarding/Onboarding";
 import { OnboardingStub } from "./onboarding/OnboardingStub";
 import { Suggestions } from "./community/Suggestions";
 import { loadProfile, saveProfile, clearAccount } from "./community/persistence";
+import { TribeLogo } from "./components/TribeLogo";
 
 const isDemoMode = import.meta.env.VITE_DEMO_MODE === "true";
 
@@ -67,12 +68,10 @@ function Header({
     <header className="sticky top-0 z-40 border-b border-tribe-200/80 bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 sm:px-6">
         <div className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-tribe-600 text-sm font-bold text-white">
-            P
-          </span>
+          <TribeLogo className="h-9 w-9 shrink-0 drop-shadow-sm" />
           <div>
             <div className="font-display text-base font-semibold leading-tight text-tribe-800 sm:text-lg">
-              Persona Match
+              Tribe
             </div>
             {isDemoMode ? (
               <span className="badge-demo">Demo</span>
