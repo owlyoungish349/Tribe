@@ -1,17 +1,31 @@
 import { useState } from "react";
 import type { Ranked, FeedbackEvent } from "../../shared/contract";
-import { isCommunity, isUserProfile } from "../matching";
+import { isCommunity, isUserProfile, normalizeFitScore } from "../matching";
 
 type Props = {
   ranked: Ranked;
   userId: string;
   onFeedback: (event: FeedbackEvent) => void;
   onJoin?: () => void;
+  onConnect?: () => void;
+  onOpenChat?: () => void;
+  joined?: boolean;
+  connected?: boolean;
 };
 
-export function SuggestionCard({ ranked, userId, onFeedback, onJoin }: Props) {
+export function SuggestionCard({
+  ranked,
+  userId,
+  onFeedback,
+  onJoin,
+  onConnect,
+  onOpenChat,
+  joined = false,
+  connected = false,
+}: Props) {
   const [expanded, setExpanded] = useState(false);
-  const { target, score, reason } = ranked;
+  const { target, reason } = ranked;
+  const score = normalizeFitScore(ranked.score);
 
   const isComm = isCommunity(target);
   const title = isComm ? target.name : isUserProfile(target) ? target.displayName : "Unknown";
@@ -87,32 +101,53 @@ export function SuggestionCard({ ranked, userId, onFeedback, onJoin }: Props) {
 
       <div className="flex gap-2">
         {isComm ? (
-          <button
-            type="button"
-            onClick={() => {
-              emit("joined");
-              onJoin?.();
-            }}
-            className="flex-1 rounded-xl bg-tribe-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-tribe-700"
-          >
-            Join
-          </button>
+          joined ? (
+            <>
+              <span className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-tribe-100 px-4 py-2.5 text-sm font-semibold text-tribe-700">
+                ✓ Joined
+              </span>
+              <button
+                type="button"
+                onClick={() => onOpenChat?.()}
+                className="rounded-xl bg-ember-500 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-ember-600"
+              >
+                Open chat
+              </button>
+            </>
+          ) : (
+            <button
+              type="button"
+              onClick={() => onJoin?.()}
+              className="flex-1 rounded-xl bg-tribe-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-tribe-700"
+            >
+              Join
+            </button>
+          )
+        ) : connected ? (
+          <span className="flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-tribe-100 px-4 py-2.5 text-sm font-semibold text-tribe-700">
+            ✓ Request sent
+          </span>
         ) : (
           <button
             type="button"
-            onClick={() => emit("accepted")}
+            onClick={() => {
+              emit("accepted");
+              onConnect?.();
+            }}
             className="flex-1 rounded-xl bg-tribe-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-tribe-700"
           >
             Connect
           </button>
         )}
-        <button
-          type="button"
-          onClick={() => emit("skipped")}
-          className="rounded-xl border border-tribe-200 px-4 py-2.5 text-sm font-medium text-tribe-500 transition-colors hover:border-tribe-300 hover:text-tribe-700"
-        >
-          Skip
-        </button>
+        {!joined && !connected && (
+          <button
+            type="button"
+            onClick={() => emit("skipped")}
+            className="rounded-xl border border-tribe-200 px-4 py-2.5 text-sm font-medium text-tribe-500 transition-colors hover:border-tribe-300 hover:text-tribe-700"
+          >
+            Skip
+          </button>
+        )}
       </div>
     </article>
   );

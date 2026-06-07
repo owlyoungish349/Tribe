@@ -3,3 +3,6 @@ dist
 dist-server
 .env
 *.local
+
+# tsc -b build artifacts
+*.tsbuildinfo

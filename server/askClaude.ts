@@ -1,16 +1,18 @@
-// SINGLE swap point for the whole app.
-export const MODEL = 'gemini-2.0-flash';
+import { Agent } from '@cursor/sdk';
 
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`;
+// SINGLE swap point for the whole app. Override with LLM_MODEL in .env.
+// Use Cursor.models.list({ apiKey: process.env.CURSOR_API_KEY }) to discover
+// available model IDs. "composer-2.5" (with the fast variant) is the quickest
+// option for these short JSON tasks; "claude-sonnet-4-6" gives richer prose
+// but runs ~2x slower per call.
+export const MODEL = process.env.LLM_MODEL ?? 'composer-2.5';
 
-type GeminiResponse = {
-  candidates?: Array<{
-    content?: { parts?: Array<{ text?: string }> };
-  }>;
-  error?: { message: string };
-};
+// composer-2.5 exposes a "fast" parameter — opt in for low-latency runs.
+const MODEL_PARAMS =
+  MODEL === 'composer-2.5' ? [{ id: 'fast', value: 'true' }] : [];
 
 function stripFences(text: string): string {
+  // Coding agents sometimes wrap JSON output in ``` fences despite instructions.
   return text
     .replace(/^```(?:json)?\s*\n?/i, '')
     .replace(/\n?```\s*$/i, '')
@@ -18,25 +20,23 @@ function stripFences(text: string): string {
 }
 
 export async function askClaude(systemPrompt: string, userContent: string): Promise<string> {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) throw new Error('GEMINI_API_KEY is not set');
+  // No dedicated system field in the Cursor SDK — prepend with clear delimiters.
+  const message = `[SYSTEM]\n${systemPrompt}\n[/SYSTEM]\n\n${userContent}`;
 
-  const res = await fetch(`${GEMINI_URL}?key=${apiKey}`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      system_instruction: { parts: [{ text: systemPrompt }] },
-      contents: [{ parts: [{ text: userContent }] }],
-      generationConfig: { temperature: 0.4, maxOutputTokens: 1024 },
-    }),
+  // Agent.prompt: stateless convenience wrapper — creates, runs one turn, disposes.
+  // cloud: {} → no local filesystem or codebase context attached.
+  console.log(`      [sdk] Agent.prompt model=${MODEL} cloud`);
+  const result = await Agent.prompt(message, {
+    apiKey: process.env.CURSOR_API_KEY,
+    model: { id: MODEL, params: MODEL_PARAMS },
+    cloud: {},
   });
+  console.log(`      [sdk] run ${result.id} status=${result.status}`);
 
-  const data = await res.json() as GeminiResponse;
-
-  if (!res.ok || data.error) {
-    throw new Error(`Gemini error ${res.status}: ${data.error?.message ?? res.statusText}`);
+  if (result.status === 'error') {
+    throw new Error(`Cursor agent run failed (status=error, id=${result.id})`);
   }
 
-  const text = data.candidates?.[0]?.content?.parts?.[0]?.text ?? '';
-  return stripFences(text);
+  const raw = result.result ?? '';
+  return stripFences(raw);
 }

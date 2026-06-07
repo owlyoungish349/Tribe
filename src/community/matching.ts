@@ -32,7 +32,17 @@ Return ONLY a JSON array of strings, e.g. ["question 1", "question 2"]`;
 
 const REFINE_SYSTEM = `You re-score community fit after the user answered interview questions.
 Return ONLY valid JSON: {"score": number, "reason": string}
+score MUST be an integer from 0 to 100 (e.g. 78 means 78% fit — never use 0.78 or 7.8).
 The reason should reference their answers and sharpen the fit narrative. One sentence.`;
+
+/** Normalize agent scores that may arrive on 0-1 or 0-10 scales into 0-100. */
+export function normalizeFitScore(raw: number): number {
+  let score = Number(raw);
+  if (!Number.isFinite(score)) return 50;
+  if (score > 0 && score <= 1) score *= 100;
+  else if (score > 1 && score <= 10) score *= 10;
+  return Math.round(Math.min(100, Math.max(0, score)));
+}
 
 const FORM_SYSTEM = `You generate a starter community profile for a newly founded space.
 Return ONLY valid JSON: {"description": string, "vibe": string, "summary": string}
@@ -92,49 +102,55 @@ async function judgeBatchLive(
   onProgress?: (p: MatchProgress) => void
 ): Promise<Ranked[]> {
   const BATCH_SIZE = 10;
-  const results: Ranked[] = [];
-  const totalBatches = Math.ceil(candidates.length / BATCH_SIZE);
-
+  const batches: (UserProfile | CommunityProfile)[][] = [];
   for (let i = 0; i < candidates.length; i += BATCH_SIZE) {
-    const batchIndex = Math.floor(i / BATCH_SIZE) + 1;
-    const batch = candidates.slice(i, i + BATCH_SIZE);
-
-    onProgress?.({
-      label: `Agent scoring ${kind === "person" ? "people" : "communities"} (${batchIndex}/${totalBatches})`,
-      current: batchIndex,
-      total: totalBatches,
-    });
-
-    const candidatesBlock = batch
-      .map((c, idx) => `--- CANDIDATE ${idx + 1} ---\n${candidateLabel(c, kind)}`)
-      .join("\n\n");
-
-    const userContent = `USER:\n${profileToText(user)}\n\nCANDIDATES (${kind}, score each):\n${candidatesBlock}`;
-
-    try {
-      const raw = await askClaude(BATCH_JUDGE_SYSTEM, userContent);
-      const parsed = parseJson<BatchJudgeResult[]>(raw, []);
-
-      for (const candidate of batch) {
-        const entry = parsed.find((r) => r.id === candidate.id);
-        results.push({
-          target: candidate,
-          score: Math.min(100, Math.max(0, entry?.score ?? 50)),
-          reason: entry?.reason ?? "Some overlap on interests and vibe.",
-        });
-      }
-    } catch {
-      for (const candidate of batch) {
-        results.push({
-          target: candidate,
-          score: 50,
-          reason: "Agent call failed — showing with neutral score.",
-        });
-      }
-    }
+    batches.push(candidates.slice(i, i + BATCH_SIZE));
   }
 
-  return results.sort((a, b) => b.score - a.score);
+  const label = kind === "person" ? "people" : "communities";
+  let done = 0;
+  onProgress?.({
+    label: `Agent scoring ${label} (0/${batches.length})`,
+    current: 0,
+    total: batches.length,
+  });
+
+  // Run all batches concurrently — each is an independent agent call.
+  const batchResults = await Promise.all(
+    batches.map(async (batch) => {
+      const candidatesBlock = batch
+        .map((c, idx) => `--- CANDIDATE ${idx + 1} ---\n${candidateLabel(c, kind)}`)
+        .join("\n\n");
+
+      const userContent = `USER:\n${profileToText(user)}\n\nCANDIDATES (${kind}, score each):\n${candidatesBlock}`;
+
+      let parsed: BatchJudgeResult[] = [];
+      try {
+        const raw = await askClaude(BATCH_JUDGE_SYSTEM, userContent);
+        parsed = parseJson<BatchJudgeResult[]>(raw, []);
+      } catch {
+        parsed = [];
+      }
+
+      done += 1;
+      onProgress?.({
+        label: `Agent scoring ${label} (${done}/${batches.length})`,
+        current: done,
+        total: batches.length,
+      });
+
+      return batch.map((candidate): Ranked => {
+        const entry = parsed.find((r) => r.id === candidate.id);
+        return {
+          target: candidate,
+          score: normalizeFitScore(entry?.score ?? 50),
+          reason: entry?.reason ?? "Some overlap on interests and vibe.",
+        };
+      });
+    })
+  );
+
+  return batchResults.flat().sort((a, b) => b.score - a.score);
 }
 
 export async function suggestPeople(
@@ -209,7 +225,7 @@ export async function refineMatch(
     });
     return {
       target: community,
-      score: Math.min(100, Math.max(0, result.score)),
+      score: normalizeFitScore(result.score),
       reason: result.reason,
     };
   } catch {
