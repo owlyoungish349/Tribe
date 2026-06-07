@@ -1,4 +1,5 @@
 import type { Ranked } from "../../shared/contract";
+import { normalizeFitScore } from "../matching";
 
 type Props = {
   communityName: string;
@@ -10,11 +11,11 @@ type Props = {
 export function ExpansionPanel({ communityName, suggestions, loading, status }: Props) {
   if (loading) {
     return (
-      <section className="rounded-2xl border border-tribe-200 bg-white p-6">
+      <section className="card p-6">
         <div className="flex items-center gap-3">
           <div className="h-5 w-5 animate-spin rounded-full border-2 border-tribe-300 border-t-tribe-600" />
           <p className="text-sm text-tribe-600">
-            {status || `Agent finding people who'd fit ${communityName}...`}
+            {status || `Finding people who'd fit ${communityName}…`}
           </p>
         </div>
       </section>
@@ -24,16 +25,11 @@ export function ExpansionPanel({ communityName, suggestions, loading, status }: 
   if (suggestions.length === 0) return null;
 
   return (
-    <section className="rounded-2xl border border-tribe-200 bg-white p-6 shadow-sm">
-      <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-tribe-400">
-        Community expansion
-      </p>
+    <section className="card p-6">
+      <p className="label-caps mb-1">Growing your space</p>
       <h3 className="mb-4 font-display text-xl font-semibold text-tribe-800">
-        3 more people who'd fit {communityName}
+        {suggestions.length} more people who'd fit {communityName}
       </h3>
-      <p className="mb-4 text-xs text-tribe-500">
-        And it keeps doing this as the network grows — Module C simulates ongoing growth.
-      </p>
       <ul className="space-y-3">
         {suggestions.map((s) => {
           const person = s.target as { displayName: string; current_focus: string };
@@ -45,10 +41,10 @@ export function ExpansionPanel({ communityName, suggestions, loading, status }: 
               <div>
                 <p className="font-medium text-tribe-800">{person.displayName}</p>
                 <p className="text-xs text-tribe-500">{person.current_focus}</p>
-                <p className="mt-1 text-sm text-tribe-600">{s.reason}</p>
+                <p className="mt-1 text-sm leading-relaxed text-tribe-600">{s.reason}</p>
               </div>
               <span className="shrink-0 rounded-full bg-ember-400/20 px-2.5 py-0.5 text-xs font-semibold text-ember-600">
-                {s.score}%
+                {normalizeFitScore(s.score)}%
               </span>
             </li>
           );

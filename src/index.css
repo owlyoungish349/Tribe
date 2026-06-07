@@ -2,7 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+@layer base {
+  html {
+    @apply antialiased scroll-smooth;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-tribe-50 font-sans text-tribe-900;
+  }
+
+  ::selection {
+    @apply bg-tribe-200 text-tribe-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply rounded-xl bg-tribe-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-tribe-700 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-ember {
+    @apply rounded-xl bg-ember-500 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-ember-600 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-ghost {
+    @apply rounded-xl border border-tribe-200 px-4 py-2.5 text-sm font-medium text-tribe-600 transition-colors hover:border-tribe-300 hover:bg-white;
+  }
+
+  .card {
+    @apply rounded-2xl border border-tribe-200 bg-white shadow-sm;
+  }
+
+  .input-field {
+    @apply w-full rounded-xl border border-tribe-200 bg-white px-4 py-3 text-sm text-tribe-800 placeholder-tribe-400 transition-colors focus:border-tribe-400 focus:outline-none focus:ring-1 focus:ring-tribe-400;
+  }
+
+  .label-caps {
+    @apply text-xs font-semibold uppercase tracking-wider text-tribe-400;
+  }
+
+  .badge-live {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-tribe-600/10 px-2.5 py-0.5 text-xs font-medium text-tribe-700;
+  }
+
+  .badge-demo {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-ember-400/20 px-2.5 py-0.5 text-xs font-medium text-ember-600;
+  }
 }
