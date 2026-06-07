@@ -20,8 +20,8 @@
     { "name": "privacy-first tooling", "weight": 0.8 }
   ],
   "comm_style": "composed and reflective under pressure; detail-oriented and organised; strong bias toward action and initiative; connects over substance rather than surface; course-corrects calmly rather than getting defensive",
-  "current_focus": "infrastructure consolidation at Lloyds Banking Group; building a civic-navigation agent at a hackathon; progressing toward Professional Cloud Architect certification",
-  "vibe_summary": "someone who builds practical tools for real people facing bureaucratic walls — drawn to moral complexity in fiction and geopolitics, calm and deliberate in how they operate, motivated by meaning and craft rather than status, with a consistent thread of helping disoriented people find their footing in unfamiliar systems",
+  "current_focus": "high-stakes infrastructure consolidation at Lloyds; Life Admin side project (privacy-first, multilingual NHS GP form auto-fill); civic-navigation agent for a hackathon; NatWest graduate offer accepted as a floor while scanning the 2027 landscape; Professional Cloud Architect certification in progress",
+  "vibe_summary": "builds tools that help disoriented people navigate bureaucratic walls — Life Admin for NHS forms, a citizen-navigation agent for fragmented public services — while grinding through Berserk-tier moral complexity and Iran geopolitics; calm under pressure, action-biased, explicitly not status-driven; wants a peaceful life near water and connects over substance, not networking theater",
   "confidence": {
     "interests": 0.95,
     "values": 0.9,

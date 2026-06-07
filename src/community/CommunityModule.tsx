@@ -111,6 +111,17 @@ export function CommunityModule({ user }: Props) {
 
     const onProgress = (p: MatchProgress) => pushLog(p.label);
 
+    // Formation is local fixture logic — detect immediately so the banner
+    // shows even if live agent scoring fails or is slow.
+    const cluster = detectFormationCluster(user, pool, communities);
+    if (cluster) {
+      setFormationNiche(cluster.niche);
+      setFormationCount(cluster.memberIds.length);
+    } else {
+      setFormationNiche(null);
+      setFormationCount(0);
+    }
+
     try {
       pushLog(`Reading ${user.displayName}'s profile…`);
       pushLog(`Asking the agent to score ${pool.length - 1} people and ${communities.length} communities…`);
@@ -124,10 +135,14 @@ export function CommunityModule({ user }: Props) {
       setPeopleSuggestions(people);
       setCommunitySuggestions(comms);
 
-      const cluster = detectFormationCluster(user, pool, communities);
       if (cluster) {
-        setFormationNiche(cluster.niche);
-        setFormationCount(cluster.memberIds.length);
+        const label = cluster.niche
+          .split(" ")
+          .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+          .join(" ");
+        pushLog(
+          `No community exists for ${label} yet — ${cluster.memberIds.length} people in the pool share it.`
+        );
       }
 
       pushLog("Ranking your top matches…");
@@ -338,6 +353,16 @@ export function CommunityModule({ user }: Props) {
             ) : (
               <p className="text-sm text-tribe-500">No community matches yet.</p>
             )}
+            {formationNiche && !foundedCommunity && (
+              <div className="mt-4">
+                <FormationBanner
+                  niche={formationNiche}
+                  memberCount={formationCount}
+                  onFound={handleFoundCommunity}
+                  loading={formationLoading}
+                />
+              </div>
+            )}
           </section>
 
           <section>
@@ -361,24 +386,6 @@ export function CommunityModule({ user }: Props) {
               <p className="text-sm text-tribe-500">No people matches yet.</p>
             )}
           </section>
-
-          {formationNiche && !foundedCommunity && (
-            <FormationBanner
-              niche={formationNiche}
-              memberCount={formationCount}
-              onFound={handleFoundCommunity}
-              loading={formationLoading}
-            />
-          )}
-
-          {foundedCommunity && (
-            <FormationBanner
-              niche={formationNiche ?? ""}
-              memberCount={formationCount}
-              onFound={() => {}}
-              founded={foundedCommunity}
-            />
-          )}
 
           {(foundedCommunity || phase === "expansion") && (
             <ExpansionPanel

@@ -239,34 +239,70 @@ export async function refineMatch(
 
 const FORMATION_INTEREST = "civic navigation tools";
 
+/** Map varied LLM/onboarding phrasing to canonical pool interest names. */
+function normalizeFormationInterest(name: string): string {
+  const n = name.toLowerCase();
+  if (
+    (n.includes("civic") && (n.includes("nav") || n.includes("admin"))) ||
+    n.includes("citizen-navigation") ||
+    n.includes("public services") ||
+    n.includes("bureaucratic")
+  ) {
+    return FORMATION_INTEREST;
+  }
+  return n;
+}
+
+function poolHasInterest(profile: UserProfile, niche: string, minWeight: number): boolean {
+  return profile.interests.some(
+    (pi) => normalizeFormationInterest(pi.name) === niche && pi.weight >= minWeight
+  );
+}
+
+/** Interests that could seed a new community — includes inferred civic-nav from values/focus. */
+function formationNichesForUser(user: UserProfile): string[] {
+  const niches = new Set<string>();
+
+  for (const i of user.interests) {
+    niches.add(normalizeFormationInterest(i.name));
+  }
+
+  const civicValue = user.values.some(
+    (v) =>
+      v.weight >= 0.75 &&
+      (v.name.toLowerCase().includes("navigate systems") ||
+        v.name.toLowerCase().includes("disoriented"))
+  );
+  const civicFocus =
+    user.current_focus.toLowerCase().includes("civic") ||
+    user.current_focus.toLowerCase().includes("life admin") ||
+    user.current_focus.toLowerCase().includes("citizen-navigation");
+
+  if (civicValue || civicFocus) {
+    niches.add(FORMATION_INTEREST);
+  }
+
+  return [...niches];
+}
+
 export function detectFormationCluster(
   user: UserProfile,
   pool: UserProfile[],
   communities: CommunityProfile[]
 ): { niche: string; memberIds: string[] } | null {
-  const userInterests = user.interests.map((i) => i.name.toLowerCase());
   const coveredInterests = new Set(
-    communities.flatMap((c) => c.interests.map((i) => i.name.toLowerCase()))
+    communities.flatMap((c) => c.interests.map((i) => normalizeFormationInterest(i.name)))
   );
 
-  const nicheCandidates = userInterests.filter(
+  const nicheCandidates = formationNichesForUser(user).filter(
     (interest) =>
-      interest === FORMATION_INTEREST ||
-      (!coveredInterests.has(interest) &&
-        pool.filter((p) =>
-          p.interests.some(
-            (pi) => pi.name.toLowerCase() === interest && pi.weight >= 0.75
-          )
-        ).length >= 4)
+      !coveredInterests.has(interest) &&
+      pool.filter((p) => poolHasInterest(p, interest, 0.75)).length >= 4
   );
 
   for (const niche of nicheCandidates) {
     const matches = pool.filter(
-      (p) =>
-        p.id !== user.id &&
-        p.interests.some(
-          (pi) => pi.name.toLowerCase() === niche && pi.weight >= 0.75
-        )
+      (p) => p.id !== user.id && poolHasInterest(p, niche, 0.75)
     );
 
     if (matches.length >= 4) {

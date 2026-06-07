@@ -88,7 +88,7 @@
     "interests": [
       { "name": "geopolitics — iran focus", "weight": 0.95 },
       { "name": "dark, morally complex anime", "weight": 0.6 },
-      { "name": "civic navigation tools", "weight": 0.7 }
+      { "name": "civic navigation tools", "weight": 0.78 }
     ],
     "values": [
       { "name": "fairness and noticing its absence", "weight": 0.95 },
@@ -371,5 +371,105 @@
     "source": "manual",
     "confirmed": true,
     "confidence": { "interests": 0.8, "values": 0.5, "comm_style": 0.75, "current_focus": 0.85, "vibe_summary": 0.8 }
+  },
+  {
+    "id": "person-21",
+    "displayName": "Elena Vasquez",
+    "interests": [
+      { "name": "civic navigation tools", "weight": 0.9 },
+      { "name": "cloud and platform engineering", "weight": 0.75 },
+      { "name": "dark, morally complex anime", "weight": 0.55 }
+    ],
+    "values": [
+      { "name": "privacy-first tooling", "weight": 0.92 },
+      { "name": "helping disoriented people navigate systems", "weight": 0.9 },
+      { "name": "usefulness over prestige", "weight": 0.88 }
+    ],
+    "comm_style": "methodical and patient — will walk you through a form field by field before suggesting a shortcut; hates dark patterns in civic UX",
+    "current_focus": "Life Admin fork for Spanish-speaking Londoners filling council tax and housing benefit forms; Terraform modules for a small health nonprofit",
+    "vibe_summary": "Colombian-British engineer who watched her mum misfile council tax for three years and built a privacy-first auto-fill tool — same Life Admin instinct as you, different language layer",
+    "source": "manual",
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.9, "comm_style": 0.85, "current_focus": 0.9, "vibe_summary": 0.88 }
+  },
+  {
+    "id": "person-22",
+    "displayName": "Tomáš Novák",
+    "interests": [
+      { "name": "civic navigation tools", "weight": 0.88 },
+      { "name": "grand strategy rpgs", "weight": 0.72 },
+      { "name": "geopolitics — iran focus", "weight": 0.6 }
+    ],
+    "values": [
+      { "name": "helping disoriented people navigate systems", "weight": 0.92 },
+      { "name": "usefulness over prestige", "weight": 0.85 },
+      { "name": "substance over status", "weight": 0.82 }
+    ],
+    "comm_style": "prototype-first — sends you a Loom of a broken demo before a spec doc; prefers async, hates standups without outcomes",
+    "current_focus": "citizen-navigation agent for dual Czech-UK residency paperwork; Fallout: New Vegas mod that maps real bureaucratic dead-ends onto in-game quests",
+    "vibe_summary": "Czech-British full-stack dev at a hackathon building the same class of agent you are — fragmented public services, one conversational layer — thinks EU4 teaches you more about state failure than most policy papers",
+    "source": "manual",
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.88, "comm_style": 0.85, "current_focus": 0.92, "vibe_summary": 0.9 }
+  },
+  {
+    "id": "person-23",
+    "displayName": "Nadia Rahmani",
+    "interests": [
+      { "name": "civic navigation tools", "weight": 0.86 },
+      { "name": "geopolitics — iran focus", "weight": 0.88 },
+      { "name": "dark, morally complex anime", "weight": 0.65 }
+    ],
+    "values": [
+      { "name": "fairness and noticing its absence", "weight": 0.92 },
+      { "name": "helping disoriented people navigate systems", "weight": 0.88 },
+      { "name": "privacy-first tooling", "weight": 0.8 }
+    ],
+    "comm_style": "warm but precise — translates bureaucratic jargon into plain English mid-conversation; won't let you skip the 'why this field matters' step",
+    "current_focus": "family reunification visa document checker for Iranian diaspora in the UK; rewatching Monster for the bureaucratic horror parallels",
+    "vibe_summary": "British-Iranian UX researcher whose family navigated Home Office forms for a decade — building the tool she wished existed when her uncle's case stalled; geopolitics is personal, Monster feels like documentary",
+    "source": "manual",
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.92, "comm_style": 0.85, "current_focus": 0.9, "vibe_summary": 0.9 }
+  },
+  {
+    "id": "person-24",
+    "displayName": "James Okonkwo",
+    "interests": [
+      { "name": "civic navigation tools", "weight": 0.84 },
+      { "name": "cloud and platform engineering", "weight": 0.8 },
+      { "name": "guitar", "weight": 0.55 }
+    ],
+    "values": [
+      { "name": "helping disoriented people navigate systems", "weight": 0.95 },
+      { "name": "usefulness over prestige", "weight": 0.9 },
+      { "name": "fairness and noticing its absence", "weight": 0.85 }
+    ],
+    "comm_style": "quiet builder energy — shows up with a working link, not a pitch deck; pairs well with people who ship first and talk later",
+    "current_focus": "PIP and disability benefits form assistant for people who've been wrongly rejected once already; GCP study group on weekends, fingerstyle guitar when stuck on a problem",
+    "vibe_summary": "Nigerian-British platform engineer who got rejected for PIP twice before building a tool that walks you through the appeals language — same 'systems chew people up' thesis, disability benefits angle",
+    "source": "manual",
+    "confirmed": true,
+    "confidence": { "interests": 0.9, "values": 0.92, "comm_style": 0.85, "current_focus": 0.9, "vibe_summary": 0.88 }
+  },
+  {
+    "id": "person-25",
+    "displayName": "Hannah Bergström",
+    "interests": [
+      { "name": "civic navigation tools", "weight": 0.8 },
+      { "name": "grand strategy rpgs", "weight": 0.7 },
+      { "name": "dark, morally complex anime", "weight": 0.6 }
+    ],
+    "values": [
+      { "name": "usefulness over prestige", "weight": 0.85 },
+      { "name": "helping disoriented people navigate systems", "weight": 0.82 },
+      { "name": "substance over status", "weight": 0.8 }
+    ],
+    "comm_style": "research-heavy then decisive — reads the actual legislation before proposing a feature; good at naming the gap between what a service claims and what it delivers",
+    "current_focus": "mapping fragmented Swedish-UK student finance rules into a single decision tree; HOI4 Baltic focus group on Discord",
+    "vibe_summary": "Policy researcher turned civic-tech builder — less cloud depth than you, but obsessive about the 'disoriented newcomer' problem across borders; Vinland Saga fan who quotes it in grant applications",
+    "source": "manual",
+    "confirmed": true,
+    "confidence": { "interests": 0.88, "values": 0.85, "comm_style": 0.82, "current_focus": 0.88, "vibe_summary": 0.85 }
   }
 ]
